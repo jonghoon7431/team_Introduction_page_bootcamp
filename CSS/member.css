@@ -1,10 +1,23 @@
 * {
   background-color: #061821;
   color: white;
+  font-family: "Gowun Dodum", sans-serif;
+  font-style: normal;
+}
+
+
+.back-button .btn {
+  font-size: 30px;
+  margin-left: 10px;
+  margin-right: 5px;
+}
+
+.back-button span {
+  font-size: 25px;
 }
 
 .container {
-  border: 3px solid red;
+  /* border: 3px solid red; */
   padding: 10px;
   display: flex;
   align-content: center;
@@ -23,6 +36,7 @@
 .name-container h1 {
   font-size: 48px;
   color: #e6ed96;
+  font-weight: 900;
 }
 
 .name-container p {
@@ -42,6 +56,10 @@
 
 .detail-2 {
   flex-direction: column;
+}
+
+.detail-2 .category {
+  margin-bottom: 5px;
 }
 
 .category {
@@ -68,7 +86,7 @@
 }
 
 .button-container {
-  border: 3px solid purple;
+  /* border: 3px solid purple; */
 }
 
 .button {
@@ -83,4 +101,5 @@
   font-size: 32px;
   background-color: #6e9785;
   margin: 10px 50px;
+  font-weight: 700;
 }
