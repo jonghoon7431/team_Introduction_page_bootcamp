@@ -1,0 +1,65 @@
+* {
+  background-color: #061821;
+  color: white;
+}
+
+.container {
+  border: 3px solid red; /* 테스트용 */
+  padding: 10px;
+  display: flex;
+}
+
+.info-container {
+  border: 10px solid yellow;
+  width: 50%;
+}
+
+.name-container {
+  border: 3px solid yellowgreen;
+  padding: 10px;
+}
+
+.name-container h1 {
+  font-size: 48px;
+  color: #e6ed96;
+}
+
+.name-container p {
+  font-size: 32px;
+}
+
+.detail-container {
+  border: 3px solid pink;
+  font-size: 24px;
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail .category {
+  color: #e6ed96;
+}
+
+.button-container {
+  border: 3px solid lightskyblue;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.button-container button {
+  width: 230px;
+  height: 60px;
+  font-size: 32px;
+  background-color: #6e9785;
+}
+
+.img-container {
+  border: 3px solid blueviolet;
+  /* width: 50%; */
+  margin: auto;
+  padding-top: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
