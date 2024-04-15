@@ -85,10 +85,6 @@
   padding-top: 20px;
 }
 
-.button-container {
-  /* border: 3px solid purple; */
-}
-
 .button {
   /* border: 3px solid lightskyblue; */
   display: flex;
