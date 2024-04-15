@@ -6,4 +6,16 @@
     3. 댓글이 하단에 등록될 때, 해당 댓글을 작성한 연도, 날짜, 시간이 자동으로 함께 기록된다.
     3. '수정' 버튼을 누르면 해당 위치에서 텍스트 수정이 가능해지며, 새롭게 생성된 '등록' 버튼을 누를 시 변경된 내용으로 갱신된다.
     4. '삭제' 버튼을 누르면 해당 댓글이 삭제된다.
+
 */
+
+let writeInput = document.querySelector('.write input');
+let writeBtn = document.querySelector('.write button');
+
+function printInput() {
+    let textOfInput = writeInput.value;
+    console.log(textOfInput);
+}
+
+writeBtn.addEventListener('click', () => {printInput()})
+//'등록하기' 버튼 클릭 시 input의 텍스트 내용 들어오는 것 확인됨
