@@ -1,0 +1,43 @@
+* {
+    font-family: "Jua", sans-serif;
+}
+
+body {
+    background-image: url('https://ifh.cc/g/rO0xhm.jpg');
+    background-size: cover;
+}
+
+.btn_group {
+    -webkit-text-stroke: 3px black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.btn_group>button {
+    margin-right: 5px;
+
+    width: 500px;
+    height: 130px;
+    font-size: 64px;
+    border-radius: 20px;
+   
+
+    animation-name: fadeIn;
+    animation-duration: 0.4s;
+    color: white;
+    background-color: #6e9785;
+    cursor: pointer;
+    margin: 30px;
+}
+
+.btn_group button:hover {
+    transition: background-color 0.2s;
+    background-color: #165839;
+}
