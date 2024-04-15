@@ -5,11 +5,22 @@
   font-style: normal;
 }
 
-
 .back-button .btn {
   font-size: 30px;
   margin-left: 10px;
-  margin-right: 5px;
+  margin-right: 10px;
+}
+
+.back-button button {
+  font-size: 30px;
+  background-color: #061821;
+  border: 0;
+  cursor: pointer;
+}
+
+.back-button button:hover {
+  transform: scale(1.1);
+  transition-duration: 1s;
 }
 
 .back-button span {
