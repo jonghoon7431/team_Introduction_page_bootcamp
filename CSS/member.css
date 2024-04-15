@@ -85,10 +85,6 @@
   padding-top: 20px;
 }
 
-.button-container {
-  /* border: 3px solid purple; */
-}
-
 .button {
   /* border: 3px solid lightskyblue; */
   display: flex;
@@ -102,4 +98,16 @@
   background-color: #6e9785;
   margin: 10px 50px;
   font-weight: 700;
+  border-radius: 5px;
+}
+
+.button button:hover {
+  transform: scale(1.2);
+  transition-duration: 1s;
+  cursor: pointer;
+}
+
+.button a {
+  background-color: #6e9785;
+  text-decoration: none;
 }
