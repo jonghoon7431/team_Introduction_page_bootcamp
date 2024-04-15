@@ -24,6 +24,10 @@ ul {
 li {
     list-style: none;
 }
+a {
+    text-decoration: none;
+    color: inherit;
+}
 
 /* style */
 #wrap {
@@ -41,23 +45,22 @@ li {
 }
 .page_name {
     height: 70px;
-    padding: 10px 0;
+    padding: 15px 0;
 }
-.page_name button {
+.page_name a {
     height: 100%;
     margin-left: 20px;
     display: flex;
-    line-height: 50px;
     font-size: 30px;
     font-weight: 900;
     color: #f1f1f1;
 }
-.page_name button i {
-    margin-top: 8px;
+.page_name a i {
+    margin-top: 2px;
     font-size: 30px;
     color: #f1f1f1;
 }
-.page_name button .button_name {
+.page_name a .button_name {
     margin-left: 15px;
 }
 .reply_section {
@@ -80,6 +83,9 @@ li {
 }
 .write input:focus {
     outline: 2px solid #313131;
+}
+.write input::placeholder {
+    font-style: italic;
 }
 .write button {
     width: 13%;
@@ -109,6 +115,23 @@ li {
     padding: 41px 0;
     text-align: left;
     color: #f1f1f1;
+}
+.reply_section ul {
+    height: 600px;
+    overflow-y: auto;
+}
+.reply_section ul::-webkit-scrollbar {
+    width: 5px;
+    
+}
+.reply_section ul::-webkit-scrollbar-thumb {
+    background-color: #f1f1f155;
+    border: 5px solid transparent;
+    border-radius: 50px;
+}
+.reply_section ul::-webkit-scrollbar-track {
+    background-color: transparent;
+    min-height: 300px;
 }
 .reply_section ul li {
     width: calc(100% - 20px);
