@@ -32,7 +32,7 @@ for (let i = 0; i < buttons.length; i++) {
 
 
 /* <댓글을 다는 기능> */
-let writeInput = document.querySelector('.write input');
+let writeTextarea = document.querySelector('.write .reply_textarea');
 let writeBtn = document.querySelector('.write button');
 let replySectionList = document.querySelector('.reply_section ul');
 
@@ -54,7 +54,7 @@ function reply() {
     let html = `
     <li>
         <div class="texts">
-            <p class="texts_reply">${writeInput.value}</p>
+            <p class="texts_reply">${writeTextarea.value}</p>
             <p class="texts_inf">
                 <span>${dateString}</span>
                 <span>${timeString}</span>
@@ -69,13 +69,27 @@ function reply() {
 }
 //날짜와 시간이 사용자가 입력한 텍스트와 함께 등록되도록 한다.
 
+/* function fixReplies() {
+    //현재 댓글의 위치에서 input 창을 연다
+    //수정한 댓글 내용을 현재 댓글 위치에 반영한다
+    let replies = document.querySelectorAll('.reply_section ul li');
+    console.log(replies);
+};
+//'수정' 버튼 클릭시 내용을 수정할 수 있게 한다 */
+
 writeBtn.addEventListener('click', () => {
-    if (writeInput.value === '') {
+    if (writeTextarea.value === '') {
         alert('내용을 입력해주세요.')
-        writeInput.focus();
+        writeTextarea.focus();
         return
     }
     reply()
-    writeInput.value = '';
+    writeTextarea.value = '';
 })
 // 클릭하면 input.value의 내용이 댓글란에 등록된다. 이후 input.value를 비운다. 공백인 경우 alert창이 뜬 후 input에 focus가 생긴다.
+/* if (replySectionList.childElementCount > 0) {
+    fixBtn.addEventListener('click', (e) => { 
+        fixReplies()
+        e.target
+    })
+} */
