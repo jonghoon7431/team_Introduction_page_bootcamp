@@ -70,8 +70,7 @@ body {
 .member img:hover {
   transition: all 0.5s;
   transform: scale(1.3);
-  border: 3px #e0f8cf;
-  border-style: inset;
+  filter: brightness(0.6);
 }
 .member img:active {
   transform: scale(0.7);
