@@ -129,7 +129,7 @@ replySectionList.addEventListener('click', (event) => {
         let fixedText = fixTextarea.value; // 새롭게 추가 또는 삭제한 댓글 내용을 변수에 저장했다.
 
         // 남은 부분: fixedText를 다시 written 의 innerText에 덮어씌워주면 된다.
-        console.log(fixedText);
+        console.log("첫 번째 클릭했을 때 fixedText:" + fixedText);
 
         // 안에서 또 클릭 이벤트 핸들러 함수 -> 한 번 더 수정 버튼을 누를 때는 수정된 댓글이 등록되게
         replySectionList.addEventListener("click", (event2) => {
@@ -140,6 +140,7 @@ replySectionList.addEventListener('click', (event) => {
                 removeTarget2.remove();
             } else if (t2.className === "fix") { // 댓글 수정 -> 등록
                 console.log("여기까지 들어옴?"); // 한번 더 수정 버튼을 눌렀을 때 이 문장이 찍히는 거 확인 완료
+                console.log("두 번째 클릭했을 때 fixedText:" + fixedText);
                 // 남은 부분: reply() 함수 호출 -> 기존에 있던 html을 수정한 html로 덮어쓰기!
                 let newHtml = reply(fixedText);
                 console.log(newHtml);
