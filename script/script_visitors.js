@@ -1,4 +1,5 @@
-// 파이어베이스 관련 모듈 임포트
+// Firebase SDK 라이브러리 임포트
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 import {
   collection,
