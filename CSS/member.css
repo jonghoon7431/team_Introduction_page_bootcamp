@@ -16,9 +16,8 @@ body {
 }
 
 .full-container {
-  width: 85%;
-  height: 100%;
-  margin: 0 auto;
+  width: 85vw;
+  margin: 30px auto;
   background-color: #000000cf;
 }
 
