@@ -3,6 +3,7 @@
   color: white;
   font-family: "Gowun Dodum", sans-serif;
   font-style: normal;
+  user-select: none;
 }
 
 .back-button .btn {
