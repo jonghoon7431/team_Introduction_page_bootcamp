@@ -96,5 +96,12 @@ replySectionList.addEventListener('click', (event) => {
     const removeT = t.parentNode.parentNode.parentNode;
     // console.log(removeT); // 테스트용
     removeT.remove();
-    // removeTarget.removeChild();
 })
+// 문제점: 삭제는 잘 되는데, '수정'을 클릭해도 댓글이 삭제됨
+
+// // 댓글 수정
+// replySectionList.addEventListener('click', (event) => {
+//     const t = event.target;
+//     const fixT = t.parentNode.previousSibling;
+//     console.log(fixT); // 테스트용
+// })
