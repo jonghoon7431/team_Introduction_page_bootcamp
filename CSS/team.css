@@ -46,6 +46,7 @@ summary {
   margin: 50px;
   display: block;
   font-size: 70px;
+  cursor: pointer;
 }
 
 p {
