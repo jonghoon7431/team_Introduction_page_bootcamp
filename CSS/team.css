@@ -44,7 +44,7 @@ ul {
 }
 
 ul > li > a {
-  ext-decoration: none;
+  text-decoration: none;
   margin: 10px;
   height: 100vh;
   
