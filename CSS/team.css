@@ -21,7 +21,7 @@ body {
   color: white;
 }
 
-.header {
+.title {
   margin-top: 30px;
 
   color: white;
@@ -38,34 +38,9 @@ body {
   margin: 0 auto;
 }
 
-ul {
-  padding: 0;
-  height: 100vh;
+summary::-webkit-details-marker {
+  display: none;
 }
-
-ul > li > a {
-  text-decoration: none;
-  margin: 10px;
-  height: 100vh;
-  
-
-  color: white;
-  -webkit-text-stroke: 1px black;
-  font-size: 50px;
+summary {
+  display: block;
 }
-
-ul > li > a .title {
-  position: relative;
-  overflow: hidden;
-      
-}
-
-ul > li > a .title .bottom {
-  position: absolute;
-}
-
-ul > li > a:hover .bottom {
-  top: 60%;
-  left: 25%;
-}
-
