@@ -1,9 +1,27 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=IBM+Plex+Sans+KR&family=Sunflower:wght@300&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
+
 * {
-  background-color: #061821;
+  /* background-color: #061821; */
   color: white;
-  font-family: "Gowun Dodum", sans-serif;
+  /* font-family: "Gowun Dodum", sans-serif; */
+  font-family: "Jua", sans-serif;
   font-style: normal;
   user-select: none;
+}
+
+body {
+  background-image: url("../img/배경.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.full-container {
+  width: 85%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #000000cf;
 }
 
 .back-button .btn {
@@ -14,9 +32,11 @@
 
 .back-button button {
   font-size: 30px;
-  background-color: #061821;
+  /* background-color: #000000cf; */
+  background: none;
   border: 0;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 .back-button button:hover {
@@ -99,6 +119,7 @@
 
 .button {
   /* border: 3px solid lightskyblue; */
+  margin-bottom: 10px;
   display: flex;
   justify-content: center;
 }

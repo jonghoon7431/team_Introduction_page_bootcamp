@@ -34,13 +34,14 @@ body {
 
 .main {
   max-width: 3000px;
-  height: 100%;
+  width: 100%;
   margin: 0 auto;
 }
 
 summary::-webkit-details-marker {
   display: none;
 }
+
 summary {
   display: block;
 }
