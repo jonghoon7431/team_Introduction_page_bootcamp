@@ -112,4 +112,3 @@ replySectionList.addEventListener('click', (event) => {
         console.log(fixT); // 테스트용
     }
 })
-// 문제점: 삭제는 잘 되는데, '수정'을 클릭해도 댓글이 삭제됨
