@@ -17,19 +17,15 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-
 }
 
-
 .title {
-  margin-top: 30px;
-
   color: white;
   -webkit-text-stroke: 3px black;
 
   text-align: center;
-  margin: 50px 0;
-  font-size: 60px;
+  
+  font-size: 50px;
 }
 
 summary::-webkit-details-marker {
@@ -39,12 +35,12 @@ summary::-webkit-details-marker {
 summary {
   margin: 50px;
   display: block;
-  font-size: 70px;
+  font-size: 50px;
   cursor: pointer;
 }
 
 p {
-  font-size: 50px;
+  font-size: 40px;
 }
 
 .question {
