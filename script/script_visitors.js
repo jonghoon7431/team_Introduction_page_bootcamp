@@ -108,7 +108,9 @@ replySectionList.addEventListener('click', (event) => {
         console.log(removeT); // 테스트용
         removeT.remove();
     } else if (t.className === "fix") { // 댓글 수정
-        const fixT = t.parentNode.previousSibling;
+        const fixT = t.parentNode.previousSibling.previousSibling.textContent;
         console.log(fixT); // 테스트용
+        const fix = t.parentNode.previousSibling.previousSibling;
+        console.log(fix); // 테스트용
     }
 })
