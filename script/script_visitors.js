@@ -89,19 +89,18 @@ writeBtn.addEventListener('click', () => {
 })
 // 클릭하면 input.value의 내용이 댓글란에 등록된다. 이후 input.value를 비운다. 공백인 경우 alert창이 뜬 후 input에 focus가 생긴다.
 
-// 댓글 삭제
+// 댓글 삭제 및 수정
 replySectionList.addEventListener('click', (event) => {
     const t = event.target;
-    // console.log(t); // 테스트용
-    const removeT = t.parentNode.parentNode.parentNode;
-    // console.log(removeT); // 테스트용
-    removeT.remove();
+    console.log(t.className); // 테스트용
+
+    if(t.className === "delete") { // 댓글 삭제
+        const removeT = t.parentNode.parentNode.parentNode;
+        console.log(removeT); // 테스트용
+        removeT.remove();
+    } else if (t.className === "fix") { // 댓글 수정
+        const fixT = t.parentNode.previousSibling;
+        console.log(fixT); // 테스트용
+    }
 })
 // 문제점: 삭제는 잘 되는데, '수정'을 클릭해도 댓글이 삭제됨
-
-// // 댓글 수정
-// replySectionList.addEventListener('click', (event) => {
-//     const t = event.target;
-//     const fixT = t.parentNode.previousSibling;
-//     console.log(fixT); // 테스트용
-// })
