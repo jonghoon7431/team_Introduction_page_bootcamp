@@ -36,6 +36,9 @@ let writeInput = document.querySelector('.write input');
 let writeBtn = document.querySelector('.write button');
 let replySectionList = document.querySelector('.reply_section ul');
 
+let fixBtn = document.querySelector('.fix');
+let deleteBtn = document.querySelector('.delete');
+
 function reply() {
     let today = new Date();
     let year = today.getFullYear();
@@ -65,7 +68,6 @@ function reply() {
     replySectionList.innerHTML += html;
 }
 //날짜와 시간이 사용자가 입력한 텍스트와 함께 등록되도록 한다.
-
 
 writeBtn.addEventListener('click', () => {
     if (writeInput.value === '') {
