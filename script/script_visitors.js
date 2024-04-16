@@ -88,3 +88,13 @@ writeBtn.addEventListener('click', () => {
     writeInput.value = '';
 })
 // 클릭하면 input.value의 내용이 댓글란에 등록된다. 이후 input.value를 비운다. 공백인 경우 alert창이 뜬 후 input에 focus가 생긴다.
+
+// 댓글 삭제
+replySectionList.addEventListener('click', (event) => {
+    const t = event.target;
+    // console.log(t); // 테스트용
+    const removeT = t.parentNode.parentNode.parentNode;
+    // console.log(removeT); // 테스트용
+    removeT.remove();
+    // removeTarget.removeChild();
+})
