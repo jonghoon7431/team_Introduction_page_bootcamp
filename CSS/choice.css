@@ -6,12 +6,17 @@
 }
 
 body {
-  min-width: 1440px;
-  overflow-x: hidden;
-  background-color: #072821;
+  background-image: url(../img/배경.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  /* overflow-x: hidden; */
 }
 #background {
-  width: 100vw;
+  /* background-position: center; */
+  width: 100%;
+  min-width: 1440px;
 }
 .btn {
   position: absolute;
