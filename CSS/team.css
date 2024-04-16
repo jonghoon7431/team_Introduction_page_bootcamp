@@ -37,11 +37,6 @@ body {
   font-size: 60px;
 }
 
-.main {
-  max-width: 3000px;
-  width: 100%;
-  margin: 0 auto;
-}
 
 summary::-webkit-details-marker {
   display: none;
