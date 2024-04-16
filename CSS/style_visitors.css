@@ -30,16 +30,16 @@ a {
 }
 
 /* style */
-#wrap {
+body {
     height: 100vh;
     background-image: url(../img/배경.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
-#inner_wrap {
-    width: 1200px;
-    height: 100vh;
+#wrap {
+    width: 85%;
+    height: 100%;
     margin: 0 auto;
     background-color: #000000CF;
 }
@@ -64,8 +64,8 @@ a {
     margin-left: 15px;
 }
 .reply_section {
-    width: 1000px;
-    margin: 40px auto 0;
+    width: 85%;
+    margin: 40px auto;
     text-align: center;
 }
 .reply_section .write {
