@@ -8,9 +8,12 @@ body {
 }
 
 .btn {
+    position: absolute;
+    font-size: 80px;
     color: aliceblue;
-    font-size: 100px;
-  } 
+    margin: 46px 30px;
+    -webkit-text-stroke: 2px black;
+  }
 
 .btn_group {
     -webkit-text-stroke: 3px black;
