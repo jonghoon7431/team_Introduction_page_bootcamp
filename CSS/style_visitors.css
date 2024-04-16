@@ -40,9 +40,8 @@ body {
     background-size: cover;
 }
 #wrap {
-    width: 85%;
-    height: 100%;
-    margin: 0 auto;
+    width: 80vw;
+    margin: 30px auto;
     background-color: #000000CF;
 }
 .page_name {
