@@ -34,7 +34,7 @@ body {
 
 .main {
   max-width: 3000px;
-  height: 100%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -57,11 +57,13 @@ ul > li > a {
 ul > li > a .title {
   position: relative;
   overflow: hidden;
-      
 }
 
 ul > li > a .title .bottom {
   position: absolute;
+  top: 60%;
+  left: 30px;
+  z-index: 2;
 }
 
 ul > li > a:hover .bottom {
