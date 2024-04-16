@@ -145,7 +145,9 @@ replySectionList.addEventListener('click', (event) => {
                 let newHtml = reply(fixedText);
                 console.log(newHtml);
                 fixedTarget = newHtml;
-                console.log(fixedTarget);
+                replySectionList.innerHTML = fixedTarget;
+                // 수정 기능 구현 완료
+                // 문제점: 수정하고 한 번 더 수정하려고 하면 안됨
             }
         })
     }
