@@ -135,7 +135,7 @@ replySectionList.addEventListener('click', (event) => {
                 const removeT2 = t2.parentNode.parentNode.parentNode;
                 removeT2.remove();
             } else if (t2.className === "fix") { // 댓글 수정 -> 등록
-                console.log("여기까지 들어옴?"); // 확인 완료
+                console.log("여기까지 들어옴?"); // 한번 더 수정 버튼을 눌렀을 때 이 문장이 찍히는 거 확인 완료
                 written.innerText = fixedText;
             }
         })
