@@ -10,12 +10,14 @@ body {
   overflow-x: hidden;
   background-color: #072821;
 }
-
+#background {
+  width: 100vw;
+}
 .btn {
   position: absolute;
   font-size: 80px;
   color: aliceblue;
-  margin: 40px 30px;
+  margin: 46px 30px;
   -webkit-text-stroke: 2px black;
 }
 
@@ -38,35 +40,37 @@ body {
   display: flex;
   position: absolute;
   flex-wrap: wrap;
-  margin: 160px 20%;
+  margin: 160px 0;
+  padding: 50px;
 }
 .profile_wrap div {
-  justify-content: space-between;
+  margin: 10px auto;
+  justify-content: space-around;
 }
 
 .line1,
 .line2 {
-  width: 100%;
+  width: 70%;
   display: flex;
-  margin: 10px;
+  align-items: center;
 }
 
 .member {
   flex-direction: column;
   width: 300px;
-  margin: 20px;
+  margin: 0 10px;
 }
 .name_box {
   position: absolute;
   display: flex;
   font-size: 32px;
+  padding: 0;
 }
 .name_box p {
   display: none;
 }
 
 .profile_wrap img {
-  width: 300px;
   height: 320px;
 }
 
@@ -81,7 +85,7 @@ body {
   filter: brightness(0.3);
 }
 .member:hover p {
-  display: inline-block;
+  display: inline;
   font-size: 40px;
   font-weight: bolder;
   color: white;
