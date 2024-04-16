@@ -7,7 +7,7 @@
 
 body {
   min-width: 1440px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .btn {
