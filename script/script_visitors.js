@@ -11,11 +11,12 @@
 
 let writeInput = document.querySelector('.write input');
 let writeBtn = document.querySelector('.write button');
+let replySectionList = document.querySelector('.reply_section ul');
 
-function printInput() {
+/* function printInput() {
     let textOfInput = writeInput.value;
-    console.log(textOfInput);
-}
+    replySectionList.innerText += 
+} */
 
 writeBtn.addEventListener('click', () => {printInput()})
 //'등록하기' 버튼 클릭 시 input의 텍스트 내용 들어오는 것 확인됨
