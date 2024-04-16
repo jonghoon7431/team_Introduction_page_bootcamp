@@ -118,7 +118,7 @@ replySectionList.addEventListener('click', (event) => {
         // console.log(removeTarget);
         removeTarget.remove();
     } else if (t.className === "fix") { // 댓글 수정
-        const fixedTarget = t.parentNode.parentNode.parentNode;
+        let fixedTarget = t.parentNode.parentNode.parentNode;
         const fixTextarea = t.parentNode.previousSibling.previousElementSibling; // textarea 노드
         const written = fixTextarea.previousSibling.previousSibling; // 기존 입력된 댓글 노드(p 노드)
         const writtenText = written.innerText; // 기존에 입력된 댓글 내용
@@ -126,10 +126,9 @@ replySectionList.addEventListener('click', (event) => {
         fixTextarea.style.display = "block"; // 기존에 입력된 댓글 노드 안보이게
         written.style.display = "none"; // 수정이 가능하도록 textarea를 보여준다
         fixTextarea.innerText += writtenText; // 기존에 입력된 댓글 내용을 textarea에 추가한다
-        let fixedText = fixTextarea.value; // 새롭게 추가 또는 삭제한 댓글 내용을 변수에 저장했다.
 
         // 남은 부분: fixedText를 다시 written 의 innerText에 덮어씌워주면 된다.
-        console.log("첫 번째 클릭했을 때 fixedText:" + fixedText);
+        console.log("첫 번째 클릭했을 때 Text:" + writtenText);
 
         // 안에서 또 클릭 이벤트 핸들러 함수 -> 한 번 더 수정 버튼을 누를 때는 수정된 댓글이 등록되게
         replySectionList.addEventListener("click", (event2) => {
@@ -140,12 +139,13 @@ replySectionList.addEventListener('click', (event) => {
                 removeTarget2.remove();
             } else if (t2.className === "fix") { // 댓글 수정 -> 등록
                 console.log("여기까지 들어옴?"); // 한번 더 수정 버튼을 눌렀을 때 이 문장이 찍히는 거 확인 완료
-                console.log("두 번째 클릭했을 때 fixedText:" + fixedText);
+                let fixedText = fixTextarea.value; // 새롭게 추가 또는 삭제한 댓글 내용을 변수에 저장했다. -> 위에 써져 있던 코드를 여기로 옮김
+                console.log("두 번째 클릭했을 때 Text:" + fixedText);
                 // 남은 부분: reply() 함수 호출 -> 기존에 있던 html을 수정한 html로 덮어쓰기!
                 let newHtml = reply(fixedText);
                 console.log(newHtml);
+                fixedTarget = newHtml;
                 console.log(fixedTarget);
-                // fixedTarget = newHtml; // 여기에서 오류 뜸
             }
         })
     }
