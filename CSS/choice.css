@@ -7,12 +7,12 @@
 
 body {
   min-width: 1440px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
-.home_button {
+.btn {
   position: absolute;
-  font-size: 50px;
+  font-size: 80px;
   color: aliceblue;
   margin: 40px 30px;
   -webkit-text-stroke: 2px black;
@@ -28,14 +28,15 @@ body {
   width: 100vw;
   text-align: center;
   margin: 50px 0;
-  font-size: 60px;
+  font-size: 80px;
+  font-weight: 100;
 }
 
 .profile_wrap {
   display: flex;
   position: absolute;
   flex-wrap: wrap;
-  margin: 130px 20%;
+  margin: 160px 20% 10px;
 }
 .profile_wrap div {
   justify-content: space-between;
@@ -70,7 +71,7 @@ body {
 .member img:hover {
   transition: all 0.5s;
   transform: scale(1.3);
-  filter: brightness(0.6);
+  filter: brightness(0.55);
 }
 .member img:active {
   transform: scale(0.7);
