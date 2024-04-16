@@ -24,7 +24,10 @@ switch(referrer) {
         break;
 }
 
-document.getElementsByClassName("button_name").textContent = "조원 선택 / " + username;
+let buttons = document.getElementsByClassName("button_name");
+for (let i = 0; i < buttons.length; i++) {
+    buttons[i].textContent = "조원 선택 / " + username;
+}
 
 /* 
 <기능>
