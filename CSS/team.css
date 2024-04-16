@@ -21,10 +21,6 @@ body {
 
 }
 
-.container {
-  text-align: center;
-  color: white;
-}
 
 .title {
   margin-top: 30px;
@@ -37,7 +33,6 @@ body {
   font-size: 60px;
 }
 
-
 summary::-webkit-details-marker {
   display: none;
 }
@@ -46,7 +41,6 @@ summary {
   margin: 50px;
   display: block;
   font-size: 70px;
-  cursor: pointer;
 }
 
 p {
@@ -56,8 +50,6 @@ p {
 .question {
   background-color: #000000cf;
   margin: 0 auto 0 auto;
-  width: 80%
+  width: 70%
   
-
-
 }
