@@ -109,7 +109,13 @@ replySectionList.addEventListener('click', (event) => {
         console.log(removeT); // 테스트용
         removeT.remove();
     } else if (t.className === "fix") { // 댓글 수정
+<<<<<<< HEAD
         const fixT = t.parentNode.previousSibling; // textarea이다
+=======
+        const fixT = t.parentNode.previousSibling.previousSibling.textContent;
+>>>>>>> c5a9f4308277f4b73e6722c4855405c8002e09a3
         console.log(fixT); // 테스트용
+        const fix = t.parentNode.previousSibling.previousSibling;
+        console.log(fix); // 테스트용
     }
 })
