@@ -1,3 +1,12 @@
+// Firebase SDK 라이브러리 임포트
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+// import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+// import {
+//   collection,
+//   addDoc,
+// } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+// import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
 /* <조원의 이름에 따라 '/' 이후에 오는 이름이 바뀌는 기능> */
 let urlParams = new URLSearchParams(window.location.search); // URL에서 물음표(?) 이후에 오는 부분 가져오기
 let referrer = urlParams.get('referrer'); // referrer 속성의 값 가져오기
@@ -86,10 +95,15 @@ writeBtn.addEventListener('click', () => {
     reply()
     writeTextarea.value = '';
 })
-// 클릭하면 input.value의 내용이 댓글란에 등록된다. 이후 input.value를 비운다. 공백인 경우 alert창이 뜬 후 input에 focus가 생긴다.
-/* if (replySectionList.childElementCount > 0) {
-    fixBtn.addEventListener('click', (e) => { 
-        fixReplies()
-        e.target
-    })
-} */
+// 클릭하면 input.value의 내용이 댓글란에 등록된다. 이후 input.value를 비운다. 공백인 경우 alert창이 뜬 후 input에 focus가 생긴다
+
+/* <댓글 삭제> */
+replySectionList.addEventListener('click', (event) => {
+    const t = event.target;
+    // console.log(t); // 테스트용
+    const removeT = t.parentNode.parentNode.parentNode;
+    // console.log(removeT); // 테스트용
+    removeT.remove();
+    // removeTarget.removeChild();
+})
+>>>>>>> 0cfb14796a66ce2e57992c546ca869bb8ea519ee

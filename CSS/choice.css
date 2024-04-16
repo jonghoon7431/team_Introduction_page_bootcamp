@@ -10,14 +10,9 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  overflow-x: hidden;
+}
 
-  /* overflow-x: hidden; */
-}
-#background {
-  /* background-position: center; */
-  width: 100%;
-  min-width: 1440px;
-}
 .btn {
   position: absolute;
   font-size: 80px;
@@ -33,8 +28,7 @@ body {
 .sub_title {
   color: white;
   -webkit-text-stroke: 2px black;
-
-  width: 100vw;
+  width: 95vw;
   text-align: center;
   margin: 50px 0;
   font-size: 80px;
@@ -46,7 +40,8 @@ body {
   position: absolute;
   flex-wrap: wrap;
   margin: 160px 0;
-  padding: 50px;
+  padding: 0 100px 0 90px;
+  width: 85vw;
 }
 .profile_wrap div {
   margin: 10px auto;
@@ -63,7 +58,7 @@ body {
 .member {
   flex-direction: column;
   width: 300px;
-  margin: 0 10px;
+  margin: 10px 10px;
 }
 .name_box {
   position: absolute;
