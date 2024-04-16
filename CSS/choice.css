@@ -40,8 +40,8 @@ body {
   position: absolute;
   flex-wrap: wrap;
   margin: 160px 0;
-  padding: 0 100px;
-  width: 90vw;
+  padding: 0 100px 0 90px;
+  width: 85vw;
 }
 .profile_wrap div {
   margin: 10px auto;
