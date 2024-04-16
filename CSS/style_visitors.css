@@ -122,7 +122,6 @@ a {
 }
 .reply_section ul::-webkit-scrollbar {
     width: 5px;
-    
 }
 .reply_section ul::-webkit-scrollbar-thumb {
     background-color: #f1f1f155;
@@ -145,7 +144,7 @@ a {
     width: 70%;
 }
 .texts .texts_inf {
-    width: 23%;
+    width: 25%;
 }
 .texts .texts_inf span {
     margin: 0 3px;
