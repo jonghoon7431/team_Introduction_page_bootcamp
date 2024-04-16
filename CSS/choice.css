@@ -10,9 +10,9 @@ body {
   overflow: hidden;
 }
 
-.home_button {
+.btn {
   position: absolute;
-  font-size: 50px;
+  font-size: 80px;
   color: aliceblue;
   margin: 40px 30px;
   -webkit-text-stroke: 2px black;
