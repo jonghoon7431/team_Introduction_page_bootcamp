@@ -3,9 +3,14 @@
 }
 
 body {
-    background-image: url('https://ifh.cc/g/rO0xhm.jpg');
+    background-image: url('../img/배경.png');
     background-size: cover;
 }
+
+.btn {
+    color: aliceblue;
+    font-size: 100px;
+  } 
 
 .btn_group {
     -webkit-text-stroke: 3px black;
@@ -27,7 +32,7 @@ body {
     height: 130px;
     font-size: 64px;
     border-radius: 20px;
-   
+
 
     animation-name: fadeIn;
     animation-duration: 0.4s;

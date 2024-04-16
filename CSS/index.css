@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Jersey+10&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gowun+Dodum&family=Gugi&family=Jersey+10&display=swap");
+
+body {
+  background-image: url("https://ifh.cc/g/rO0xhm.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#main {
+  height: 300px;
+  margin-top: 200px;
+  padding: 50px;
+
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  font-size: 96px;
+  font-weight: bold;
+
+  text-align: center;
+  -webkit-text-stroke: 1px black;
+  color: white;
+
+  cursor: help;
+}
+
+a {
+  display: block;
+
+  font-family: "Jersey 10", sans-serif;
+  font-size: 100px;
+  font-weight: normal;
+
+  text-align: center;
+  color: white;
+  text-decoration: none;
+}
+
+a:link {
+  color: white;
+}
+
+a:hover {
+  color: yellow;
+}
+
+.btn {
+  cursor: pointer;
+
+  width: 500px;
+  height: 110px;
+  margin: auto;
+  border-radius: 20px;
+
+  background-color: #aee0cb;
+}
