@@ -16,7 +16,6 @@ body {
   background-image: url(../img/배경.png);
   background-repeat: no-repeat;
   background-size: cover;
-
   background-attachment: fixed;
 
 }
@@ -41,6 +40,7 @@ summary {
   margin: 50px;
   display: block;
   font-size: 70px;
+  cursor: pointer;
 }
 
 p {
