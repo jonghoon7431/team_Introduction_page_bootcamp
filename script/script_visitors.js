@@ -49,7 +49,7 @@ let replySectionList = document.querySelector('.reply_section ul');
 let fixBtn = document.querySelector('.fix');
 let deleteBtn = document.querySelector('.delete');
 
-// 댓글 단 날짜 함수 따로 뺌
+// 댓글 단 날짜 함수 (따로 뺌)
 function replyDate() {
     let today = new Date();
     let year = today.getFullYear();
@@ -65,13 +65,14 @@ function replyDate() {
     return {dateString, timeString};
 }
 
-function reply() {
+// reply() 함수 밑에서도 사용하기 위해서 매개변수 추가 및 리턴문 추가(기능은 동일하게 작동함)
+function reply(textThing) {
     let {dateString, timeString} = replyDate();
 
     let html = `
     <li>
         <div class="texts">
-            <p class="texts_reply">${writeTextarea.value}</p>
+            <p class="texts_reply">${textThing}</p>
             <textarea class="reply_textarea"></textarea>
             <p class="texts_inf">
                 <span>${dateString}</span>
@@ -83,7 +84,7 @@ function reply() {
     </li>
     `;
 
-    replySectionList.innerHTML += html;
+    return html;
 }
 //날짜와 시간이 사용자가 입력한 텍스트와 함께 등록되도록 한다.
 
@@ -101,7 +102,8 @@ writeBtn.addEventListener('click', () => {
         writeTextarea.focus();
         return
     }
-    reply()
+    let html = reply(writeTextarea.value);
+    replySectionList.innerHTML += html;
     writeTextarea.value = '';
 })
 // 클릭하면 input.value의 내용이 댓글란에 등록된다. 이후 input.value를 비운다. 공백인 경우 alert창이 뜬 후 input에 focus가 생긴다
@@ -112,9 +114,11 @@ replySectionList.addEventListener('click', (event) => {
     const t = event.target;
 
     if(t.className === "delete") { // 댓글 삭제
-        const removeT = t.parentNode.parentNode.parentNode;
-        removeT.remove();
+        const removeTarget = t.parentNode.parentNode.parentNode;
+        // console.log(removeTarget);
+        removeTarget.remove();
     } else if (t.className === "fix") { // 댓글 수정
+        const fixedTarget = t.parentNode.parentNode.parentNode;
         const fixTextarea = t.parentNode.previousSibling.previousElementSibling; // textarea 노드
         const written = fixTextarea.previousSibling.previousSibling; // 기존 입력된 댓글 노드(p 노드)
         const writtenText = written.innerText; // 기존에 입력된 댓글 내용
@@ -132,11 +136,15 @@ replySectionList.addEventListener('click', (event) => {
             const t2 = event2.target;
 
             if(t2.className === "delete") { // 댓글 삭제
-                const removeT2 = t2.parentNode.parentNode.parentNode;
-                removeT2.remove();
+                const removeTarget2 = t2.parentNode.parentNode.parentNode;
+                removeTarget2.remove();
             } else if (t2.className === "fix") { // 댓글 수정 -> 등록
                 console.log("여기까지 들어옴?"); // 한번 더 수정 버튼을 눌렀을 때 이 문장이 찍히는 거 확인 완료
-                written.innerText = fixedText;
+                // 남은 부분: reply() 함수 호출 -> 기존에 있던 html을 수정한 html로 덮어쓰기!
+                let newHtml = reply(fixedText);
+                console.log(newHtml);
+                console.log(fixedTarget);
+                // fixedTarget = newHtml; // 여기에서 오류 뜸
             }
         })
     }
