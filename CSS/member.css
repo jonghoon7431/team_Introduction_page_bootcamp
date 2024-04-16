@@ -1,10 +1,7 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Gowun+Dodum&family=IBM+Plex+Sans+KR&family=Sunflower:wght@300&display=swap"); */
 @import url("https://fonts.googleapis.com/css2?family=Jua&display=swap");
 
 * {
-  /* background-color: #061821; */
   color: white;
-  /* font-family: "Gowun Dodum", sans-serif; */
   font-family: "Jua", sans-serif;
   font-style: normal;
   user-select: none;
@@ -32,7 +29,6 @@ body {
 
 .back-button button {
   font-size: 30px;
-  /* background-color: #000000cf; */
   background: none;
   border: 0;
   cursor: pointer;
