@@ -102,16 +102,24 @@ writeBtn.addEventListener('click', () => {
 // 댓글 삭제 및 수정
 replySectionList.addEventListener('click', (event) => {
     const t = event.target;
-    console.log(t.className); // 테스트용
+    /* console.log(t.className); */ // 테스트용
 
     if(t.className === "delete") { // 댓글 삭제
         const removeT = t.parentNode.parentNode.parentNode;
-        console.log(removeT); // 테스트용
+        /* console.log(removeT); */ // 테스트용
         removeT.remove();
     } else if (t.className === "fix") { // 댓글 수정
-        const fixT = t.parentNode.previousSibling.previousSibling.textContent;
-        console.log(fixT); // 테스트용
-        const fix = t.parentNode.previousSibling.previousSibling;
-        console.log(fix); // 테스트용
+        const fixTextarea = t.parentNode.previousSibling.previousElementSibling; //textarea
+        const written = fixTextarea.previousSibling.previousSibling; //기존 입력된 댓글 노드
+        const writtenText = written.innerText;//기존에 입력된 댓글 내용
+        
+        fixTextarea.style.display = "block";//기존에 입력된 댓글 노드 안보이게
+        written.style.display = "none";//수정이 가능하도록 textarea를 보여준다
+
+        fixTextarea.innerText += writtenText;//기존에 입력된 댓글 내용을 textarea에 추가한다
+        let fixedText = fixTextarea.value;// 새롭게 추가 또는 삭제한 댓글 내용을 변수에 저장했다.
+
+        //남은 부분: fixedText를 다시 written 의 innerText에 덮어씌워주면 된다.
+        console.log(fixedText);
     }
 })
