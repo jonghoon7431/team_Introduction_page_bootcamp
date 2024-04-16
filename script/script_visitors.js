@@ -64,6 +64,7 @@ function reply() {
     <li>
         <div class="texts">
             <p class="texts_reply">${writeTextarea.value}</p>
+            <textarea class="reply_textarea"></textarea>
             <p class="texts_inf">
                 <span>${dateString}</span>
                 <span>${timeString}</span>
@@ -108,7 +109,7 @@ replySectionList.addEventListener('click', (event) => {
         console.log(removeT); // 테스트용
         removeT.remove();
     } else if (t.className === "fix") { // 댓글 수정
-        const fixT = t.parentNode.previousSibling;
+        const fixT = t.parentNode.previousSibling; // textarea이다
         console.log(fixT); // 테스트용
     }
 })
