@@ -57,7 +57,7 @@ body {
 
 .info-container {
   /* border: 10px solid yellow; */
-  width: 50%;
+  width: 55%;
 }
 
 .name-container {
@@ -105,10 +105,13 @@ body {
   padding-top: 30px;
   padding-left: 20px;
   padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .img-container img {
-  width: 500px;
+  width: 400px;
 }
 
 .img-container .one-word {
