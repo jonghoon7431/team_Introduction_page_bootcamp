@@ -64,6 +64,7 @@ function reply() {
     <li>
         <div class="texts">
             <p class="texts_reply">${writeTextarea.value}</p>
+            <textarea class="reply_textarea"></textarea>
             <p class="texts_inf">
                 <span>${dateString}</span>
                 <span>${timeString}</span>
