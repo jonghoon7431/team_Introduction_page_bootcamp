@@ -28,14 +28,15 @@ body {
   width: 100vw;
   text-align: center;
   margin: 50px 0;
-  font-size: 60px;
+  font-size: 80px;
+  font-weight: 100;
 }
 
 .profile_wrap {
   display: flex;
   position: absolute;
   flex-wrap: wrap;
-  margin: 130px 20%;
+  margin: 160px 20% 10px;
 }
 .profile_wrap div {
   justify-content: space-between;
