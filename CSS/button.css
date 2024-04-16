@@ -7,6 +7,11 @@ body {
     background-size: cover;
 }
 
+.btn {
+    color: aliceblue;
+    font-size: 100px;
+  } 
+
 .btn_group {
     -webkit-text-stroke: 3px black;
     display: flex;
@@ -27,7 +32,7 @@ body {
     height: 130px;
     font-size: 64px;
     border-radius: 20px;
-   
+
 
     animation-name: fadeIn;
     animation-duration: 0.4s;
