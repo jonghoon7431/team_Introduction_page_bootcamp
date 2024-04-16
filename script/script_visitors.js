@@ -1,3 +1,22 @@
+let urlParams = new URLSearchParams(window.location.search); // URL에서 물음표(?) 이후에 오는 부분 가져오기
+let referrer = urlParams.get('referrer'); // referrer 속성의 값 가져오기
+let username = null; // 페이지에 따라 바뀔 이름
+console.log(referrer);
+switch(referrer) {
+    case "member1.html":
+        username = "김현진";
+    case "member2.html":
+        username = "이녕수";
+    case "member3.html":
+        username = "이종훈";
+    case "member4.html":
+        username = "서샛별";
+    case "member5.html":
+        username = "남수빈";
+    case "member6.html":
+        username = "한효림";
+}
+
 /* 
 <기능>
 방명록 : 
