@@ -44,7 +44,7 @@ ul {
 }
 
 ul > li > a {
-  ext-decoration: none;
+  text-decoration: none;
   margin: 10px;
   height: 100vh;
   
@@ -54,21 +54,18 @@ ul > li > a {
   font-size: 50px;
 }
 
-    ul > li > a .title {
-      position: relative;
-      overflow: hidden;
+ul > li > a .title {
+  position: relative;
+  overflow: hidden;
       
-      
-    }
+}
 
-    ul > li > a .title .bottom {
-      position: absolute;
-      
-    }
+ul > li > a .title .bottom {
+  position: absolute;
+}
 
-    ul > li > a:hover .bottom {
-      top: 60%;
-      left: 25%;
-      
-    }
+ul > li > a:hover .bottom {
+  top: 60%;
+  left: 25%;
+}
 
