@@ -1,3 +1,11 @@
+// 파이어베이스 관련 모듈 임포트
+import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import {
+  collection,
+  addDoc,
+} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
 /* <조원의 이름에 따라 '/' 이후에 오는 이름이 바뀌는 기능> */
 let urlParams = new URLSearchParams(window.location.search); // URL에서 물음표(?) 이후에 오는 부분 가져오기
 let referrer = urlParams.get('referrer'); // referrer 속성의 값 가져오기
