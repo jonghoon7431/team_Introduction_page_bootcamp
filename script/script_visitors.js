@@ -45,10 +45,12 @@ let writeTextarea = document.querySelector('.write .reply_textarea');
 let writeBtn = document.querySelector('.write button');
 let replySectionList = document.querySelector('.reply_section ul');
 
+// 이 두 밑에 변수 쓰이지 않음 -> 삭제해도 되나요?
 let fixBtn = document.querySelector('.fix');
 let deleteBtn = document.querySelector('.delete');
 
-function reply() {
+// 댓글 단 날짜 함수 따로 뺌
+function replyDate() {
     let today = new Date();
     let year = today.getFullYear();
     let month = ('0' + (today.getMonth() + 1)).slice(-2);
@@ -59,6 +61,12 @@ function reply() {
 
     let dateString = year + '.' + month + '.' + day;
     let timeString = hours + ':' + minutes + ':' + seconds;
+
+    return {dateString, timeString};
+}
+
+function reply() {
+    let {dateString, timeString} = replyDate();
 
     let html = `
     <li>
@@ -102,24 +110,34 @@ writeBtn.addEventListener('click', () => {
 // 댓글 삭제 및 수정
 replySectionList.addEventListener('click', (event) => {
     const t = event.target;
-    /* console.log(t.className); */ // 테스트용
 
     if(t.className === "delete") { // 댓글 삭제
         const removeT = t.parentNode.parentNode.parentNode;
-        /* console.log(removeT); */ // 테스트용
         removeT.remove();
     } else if (t.className === "fix") { // 댓글 수정
-        const fixTextarea = t.parentNode.previousSibling.previousElementSibling; //textarea
-        const written = fixTextarea.previousSibling.previousSibling; //기존 입력된 댓글 노드
-        const writtenText = written.innerText;//기존에 입력된 댓글 내용
+        const fixTextarea = t.parentNode.previousSibling.previousElementSibling; // textarea 노드
+        const written = fixTextarea.previousSibling.previousSibling; // 기존 입력된 댓글 노드(p 노드)
+        const writtenText = written.innerText; // 기존에 입력된 댓글 내용
         
-        fixTextarea.style.display = "block";//기존에 입력된 댓글 노드 안보이게
-        written.style.display = "none";//수정이 가능하도록 textarea를 보여준다
+        fixTextarea.style.display = "block"; // 기존에 입력된 댓글 노드 안보이게
+        written.style.display = "none"; // 수정이 가능하도록 textarea를 보여준다
+        fixTextarea.innerText += writtenText; // 기존에 입력된 댓글 내용을 textarea에 추가한다
+        let fixedText = fixTextarea.value; // 새롭게 추가 또는 삭제한 댓글 내용을 변수에 저장했다.
 
-        fixTextarea.innerText += writtenText;//기존에 입력된 댓글 내용을 textarea에 추가한다
-        let fixedText = fixTextarea.value;// 새롭게 추가 또는 삭제한 댓글 내용을 변수에 저장했다.
-
-        //남은 부분: fixedText를 다시 written 의 innerText에 덮어씌워주면 된다.
+        // 남은 부분: fixedText를 다시 written 의 innerText에 덮어씌워주면 된다.
         console.log(fixedText);
+
+        // 안에서 또 클릭 이벤트 핸들러 함수 -> 한 번 더 수정 버튼을 누를 때는 수정된 댓글이 등록되게
+        replySectionList.addEventListener("click", (event2) => {
+            const t2 = event2.target;
+
+            if(t2.className === "delete") { // 댓글 삭제
+                const removeT2 = t2.parentNode.parentNode.parentNode;
+                removeT2.remove();
+            } else if (t2.className === "fix") { // 댓글 수정 -> 등록
+                console.log("여기까지 들어옴?"); // 확인 완료
+                written.innerText = fixedText;
+            }
+        })
     }
 })
