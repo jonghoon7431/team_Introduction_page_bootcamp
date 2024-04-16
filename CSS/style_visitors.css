@@ -100,6 +100,7 @@ body {
 .write button:hover {
     transition: background-color 0.2s;
     background-color: #165839;
+    cursor: pointer;
 }
 .divide_line {
     width: calc(100% - 15px);

@@ -1,11 +1,11 @@
 // Firebase SDK 라이브러리 임포트
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-import {
-  collection,
-  addDoc,
-} from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+// import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+// import {
+//   collection,
+//   addDoc,
+// } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+// import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
 /* <조원의 이름에 따라 '/' 이후에 오는 이름이 바뀌는 기능> */
 let urlParams = new URLSearchParams(window.location.search); // URL에서 물음표(?) 이후에 오는 부분 가져오기
