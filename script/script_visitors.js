@@ -33,10 +33,8 @@ switch(referrer) {
         break;
 }
 
-let buttons = document.getElementsByClassName("button_name");
-for (let i = 0; i < buttons.length; i++) {
-    buttons[i].textContent = "조원 선택 / " + username;
-}
+let btn = document.getElementById("btn");
+btn.textContent = "조원 선택 / " + username;
 
 /* <댓글을 다는 기능> */
 let writeTextarea = document.querySelector('.write .reply_textarea');
