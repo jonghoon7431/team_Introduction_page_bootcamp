@@ -19,10 +19,12 @@ body {
 }
 
 .wrap-all {
+  margin-top: 6rem;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
 }
 
 .play-time {
@@ -35,7 +37,6 @@ body {
 ul {
   margin-top: 1rem;
   list-style: none;
-  border: 2px solid var(--facebook);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -44,8 +45,6 @@ li {
   width: 100px;
   height: 100px;
   cursor: grab;
-   
-  color: blanchedalmond;
   background: url(../img/hexagon.jpg)
 }
 
