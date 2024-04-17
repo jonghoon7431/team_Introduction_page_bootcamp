@@ -1,53 +1,54 @@
 * {
-    font-family: "Jua", sans-serif;
+  font-family: "Jua", sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background-image: url('../img/배경.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
+  background-image: url("../img/배경.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .btn {
-    position: absolute;
-    font-size: 80px;
-    color: aliceblue;
-    margin: 46px 30px;
-    -webkit-text-stroke: 2px black;
+  position: absolute;
+  font-size: 80px;
+  color: aliceblue;
+  margin: 40px 30px;
+  -webkit-text-stroke: 2px black;
 }
 
 .btn_group {
-    -webkit-text-stroke: 3px black;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  -webkit-text-stroke: 3px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.btn_group>button {
-    margin-right: 5px;
+.btn_group > button {
+  margin-right: 5px;
 
-    width: 500px;
-    height: 130px;
-    font-size: 64px;
-    border-radius: 20px;
+  width: 500px;
+  height: 130px;
+  font-size: 64px;
+  border-radius: 20px;
 
-
-    animation-name: fadeIn;
-    animation-duration: 0.4s;
-    color: white;
-    background-color: #6e9785;
-    cursor: pointer;
-    margin: 30px;
+  animation-name: fadeIn;
+  animation-duration: 0.4s;
+  color: white;
+  background-color: #6e9785;
+  cursor: pointer;
+  margin: 30px;
 }
 
 .btn_group button:hover {
-    transition: background-color 0.2s;
-    background-color: #165839;
+  transition: background-color 0.2s;
+  background-color: #165839;
 }

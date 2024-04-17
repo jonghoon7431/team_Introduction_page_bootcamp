@@ -3,14 +3,18 @@
   font-weight: 400;
   font-style: normal;
   user-select: none;
+  margin: 0;
+  padding: 0;
 }
 
 .btn {
+  position: absolute;
+  top: 0;
   font-size: 80px;
   margin: 40px 30px;
   color: aliceblue;
   -webkit-text-stroke: 2px black;
-}  
+}
 
 body {
   background-image: url(../img/배경.png);
@@ -24,6 +28,7 @@ body {
   -webkit-text-stroke: 3px black;
   text-align: center;
   font-size: 40px;
+  margin-top: 50px;
 }
 
 summary::-webkit-details-marker {
@@ -44,6 +49,5 @@ p {
 .question {
   background-color: #000000cf;
   margin: 0 auto 0 auto;
-  width: 70%
-  
+  width: 70%;
 }
