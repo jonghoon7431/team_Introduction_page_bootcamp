@@ -43,7 +43,7 @@ function setGame() {
       playTime.innerText = time;
       time++;
     }, 1000)
-  }, 1000)
+  }, 2000)
 }
 
 
