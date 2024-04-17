@@ -131,8 +131,7 @@ function fixReply(target) {
 ;
 function completeReply(target) {
     const textsLi = target.closest("li");
-    const textsDiv = textsLi.querySelector(".texts");
-    const fixTextarea = textsDiv.querySelector(".reply_textarea");
+    const fixTextarea = textsLi.querySelector(".reply_textarea");
 
     let newHtml = unframedReply(fixTextarea.value);
     textsLi.innerHTML = newHtml;
