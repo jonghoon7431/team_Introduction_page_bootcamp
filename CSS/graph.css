@@ -152,6 +152,12 @@ body {
   margin-right: 30px;
 }
 
+meter::-webkit-meter-optimum-value, 
+meter::-webkit-meter-suboptimum-value, 
+meter::-webkit-meter-even-less-good-value {
+  background: var(--progress-color); /* 미터 바의 색상 */
+}
+
 .category {
   color: #e6ed96;
   margin: auto auto auto 10px;
