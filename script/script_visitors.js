@@ -45,6 +45,13 @@ let writeTextarea = document.querySelector('.write .reply_textarea');
 let writeBtn = document.querySelector('.write button');
 let replySectionList = document.querySelector('.reply_section ul');
 
+let fixBtn = null;
+let fixDoneBtn = null;
+let deleteBtn = null;
+
+let replies = [];
+let replyCount = 0;
+
 // 댓글 단 날짜 함수 (따로 뺌)
 function replyDate() {
     let today = new Date();
@@ -74,6 +81,7 @@ function reply(textThing) {
                 <span>${dateString}</span>
                 <span>${timeString}</span>
                 <button class="fix">수정</button>
+                <button class="fix_done">수정완료</button>
                 <button class="delete">삭제</button>
             </p>
         </div>
@@ -82,31 +90,93 @@ function reply(textThing) {
 
     return html;
 }
-//날짜와 시간이 사용자가 입력한 텍스트와 함께 등록되도록 한다.
-
-/* function fixReplies() {
-    //현재 댓글의 위치에서 input 창을 연다
-    //수정한 댓글 내용을 현재 댓글 위치에 반영한다
-    let replies = document.querySelectorAll('.reply_section ul li');
-    console.log(replies);
-};
-//'수정' 버튼 클릭시 내용을 수정할 수 있게 한다 */
+//날짜, 시간, 텍스트를 양식의 각 위치에 입력받은 후 양식을 반환한다.
 
 writeBtn.addEventListener('click', () => {
     if (writeTextarea.value === '') {
         alert('내용을 입력해주세요.')
         writeTextarea.focus();
         return
-    }
+    };
     let html = reply(writeTextarea.value);
-    replySectionList.innerHTML += html;
-    writeTextarea.value = '';
-})
-// 클릭하면 input.value의 내용이 댓글란에 등록된다. 이후 input.value를 비운다. 공백인 경우 alert창이 뜬 후 input에 focus가 생긴다
+    replies.push(html); // replies 배열에 작성된 댓글을 추가
+    replySectionList.innerHTML = ''; // replySectionList를 비운다.(증가된 입력 방지)
+    replies.forEach((replyEach) => {
+        replySectionList.innerHTML += replyEach
+    }); // replies 배열에 들어있는 요소를 모두 replySectionList에 넣는다
+
+    writeTextarea.value = ''; // textarea를 비운다
+
+    replyCount++; // replyCount를 1 증가시킨다.
+
+    activateModify();
+});
+// 클릭하면 input.value의 내용이 댓글란에 등록된다.
+
+function activateModify() {
+    if (replyCount > 0) {
+        fixBtn = document.querySelectorAll('.fix');
+        fixDoneBtn = document.querySelectorAll('.fix_done');
+        deleteBtn = document.querySelectorAll('.delete');
+        //작성된 댓글이 하나 이상이라면 fixBtn과 deleteBtn에 재할당하도록 한다.
+        console.log('work?');
+
+        fixBtn.forEach((fixBtnEach, index) => {
+            fixBtnEach.addEventListener('click', (event) => {
+                let elem = event.target;
+                let elemText = elem.parentNode.parentNode.querySelector('.texts_reply');
+                let elemTextarea = elem.parentNode.parentNode.querySelector('.reply_textarea');
+                let elemIndex = index;
+                console.log(elemText, elemIndex);
+
+                let writtenText = elemText.innerHTML;
+
+                elemText.style.display = "none";
+                elemTextarea.style.display = "block";
+
+                elemTextarea.innerHTML += writtenText; // textarea에 기존 글 내용이 나타난다.
+                
+                let textThings = elemTextarea.innerHTML;
+                reply(textThings); //수정된 텍스트가 들어간 html을 이 자리에 반환할것임
+                // 우선 '수정완료' 버튼을 만든다
+
+            });
+        });
+    }; 
+}
+//'수정' 및 '삭제' 기능 활성화 :  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // 댓글 삭제 및 수정
-replySectionList.addEventListener('click', (event) => {
+/* replySectionList.addEventListener('click', (event) => {
     const t = event.target;
 
     if(t.className === "delete") { // 댓글 삭제
@@ -115,6 +185,7 @@ replySectionList.addEventListener('click', (event) => {
         removeTarget.remove();
     } else if (t.className === "fix") { // 댓글 수정
         let fixedTarget = t.parentNode.parentNode.parentNode;
+        console.log(fixedTarget);
         const fixTextarea = t.parentNode.previousSibling.previousElementSibling; // textarea 노드
         const written = fixTextarea.previousSibling.previousSibling; // 기존 입력된 댓글 노드(p 노드)
         const writtenText = written.innerText; // 기존에 입력된 댓글 내용
@@ -149,4 +220,4 @@ replySectionList.addEventListener('click', (event) => {
             }
         })
     }
-})
+}) */
