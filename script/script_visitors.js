@@ -45,10 +45,6 @@ let writeTextarea = document.querySelector('.write .reply_textarea');
 let writeBtn = document.querySelector('.write button');
 let replySectionList = document.querySelector('.reply_section ul');
 
-// 이 두 밑에 변수 쓰이지 않음 -> 삭제해도 되나요?
-let fixBtn = document.querySelector('.fix');
-let deleteBtn = document.querySelector('.delete');
-
 // 댓글 단 날짜 함수 (따로 뺌)
 function replyDate() {
     let today = new Date();
@@ -127,7 +123,7 @@ replySectionList.addEventListener('click', (event) => {
         written.style.display = "none"; // 수정이 가능하도록 textarea를 보여준다
         fixTextarea.innerText += writtenText; // 기존에 입력된 댓글 내용을 textarea에 추가한다
 
-        // 남은 부분: fixedText를 다시 written 의 innerText에 덮어씌워주면 된다.
+        // 남은 부분: fixedText를 다시 written의 innerText에 덮어씌워주면 된다.
         console.log("첫 번째 클릭했을 때 Text:" + writtenText);
 
         // 안에서 또 클릭 이벤트 핸들러 함수 -> 한 번 더 수정 버튼을 누를 때는 수정된 댓글이 등록되게
@@ -148,6 +144,8 @@ replySectionList.addEventListener('click', (event) => {
                 replySectionList.innerHTML = fixedTarget;
                 // 수정 기능 구현 완료
                 // 문제점: 수정하고 한 번 더 수정하려고 하면 안됨
+
+                // 확인된 문제점 : 2회 이상의 수정을 시도할 시에 시간, 날짜 부분만 갱신되고 textarea 부분을 불러올 수 없다.
             }
         })
     }
