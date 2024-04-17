@@ -93,7 +93,6 @@ body {
 .category {
   color: #e6ed96;
   font-size: 30px;
-
 }
 
 .img-container {
@@ -147,39 +146,37 @@ body {
 }
 
 .meter-size {
- 
   width: 400px;
   height: 60px;
   margin: auto;
   margin-right: 30px;
-
 }
 
 .category {
   color: #e6ed96;
   margin: auto auto auto 10px;
-
 }
 
 .result {
   padding: 15px 20px;
-  background-color: #525252;
+  background-color: black;
   border-radius: 5px;
   color: #67c4a0;
   position: absolute;
+  border: 1px white solid;
 
   display: flex;
   justify-content: center;
-  align-items: center; 
+  align-items: center;
   margin: 25px auto;
-  left: 980px;
+  left: 55%;
 
   opacity: 0;
   transition: all ease 0.5s;
 }
 
 .mouse-over:hover + .result {
-    opacity: 1;
+  opacity: 1;
 }
 .mouse-over {
   font-size: 30px;
@@ -192,4 +189,3 @@ body {
 
   cursor: pointer;
 }
-
