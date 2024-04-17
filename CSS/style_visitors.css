@@ -166,6 +166,7 @@ body {
 .texts .texts_reply {
     display: block;
     width: 70%;
+    word-break: break-all;
     margin-right: 20px;
 }
 .texts .reply_textarea {

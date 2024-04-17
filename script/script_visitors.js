@@ -109,13 +109,13 @@ writeBtn.addEventListener('click', () => {
     console.log(html);
     replySectionList.innerHTML += html;
     writeTextarea.value = '';
-})
+});
 // 클릭하면 input.value의 내용이 댓글란에 등록된다. 이후 input.value를 비운다. 공백인 경우 alert창이 뜬 후 input에 focus가 생긴다
 
 function deleteReply(target) {
     const removeTarget = target.closest("li");
     removeTarget.remove();
-}
+};
 
 function fixReply(target) {
     const textsDiv = target.closest(".texts");
@@ -128,7 +128,7 @@ function fixReply(target) {
     target.style.display = "none"; // "수정" 버튼 감추기
     target.nextSibling.nextSibling.style.display = "block"; // "수정 완료" 버튼 보이기
 }
-
+;
 function completeReply(target) {
     const textsLi = target.closest("li");
     const textsDiv = textsLi.querySelector(".texts");
@@ -139,7 +139,7 @@ function completeReply(target) {
 
     target.style.display = "none"; // "수정 완료" 버튼 감추기
     target.previousSibling.previousSibling.style.display = "block"; // "수정" 버튼 보이기
-}
+};
 
 replySectionList.addEventListener('click', (event) => {
     const t = event.target;
@@ -150,4 +150,4 @@ replySectionList.addEventListener('click', (event) => {
     } else if (t.className === "complete") {
         completeReply(t);
     }
-})
+});
