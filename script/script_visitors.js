@@ -60,7 +60,6 @@ function replyDate() {
 
 function reply(textThing) {
     let {dateString, timeString} = replyDate();
-
     let html = `
     <li>
         <div class="texts">
@@ -76,7 +75,6 @@ function reply(textThing) {
         </div>
     </li>
     `;
-
     return html;
 };
 
@@ -145,7 +143,6 @@ function completeReply(target) {
 
 replySectionList.addEventListener('click', (event) => {
     const t = event.target;
-
     if(t.className === "delete") {
         deleteReply(t);
     } else if (t.className === "fix") {
