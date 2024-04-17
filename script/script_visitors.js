@@ -62,7 +62,6 @@ function replyDate() {
 
 function reply(textThing) {
     let {dateString, timeString} = replyDate();
-
     let html = `
     <li>
         <div class="texts">
@@ -78,7 +77,6 @@ function reply(textThing) {
         </div>
     </li>
     `;
-
     return html;
 }
 
@@ -95,11 +93,6 @@ writeBtn.addEventListener('click', () => {
     writeTextarea.value = '';
 })
 // 클릭하면 input.value의 내용이 댓글란에 등록된다. 이후 input.value를 비운다. 공백인 경우 alert창이 뜬 후 input에 focus가 생긴다
-
-// let fixBtn = document.querySelector(".fix");
-// let completeBtn = document.querySelector(".complete");
-// let deleteBtn = document.querySelector(".delete");
-
 
 function deleteReply(target) {
     const removeTarget = target.closest("li");
@@ -132,7 +125,6 @@ function completeReply(target) {
 
 replySectionList.addEventListener('click', (event) => {
     const t = event.target;
-
     if(t.className === "delete") {
         deleteReply(t);
     } else if (t.className === "fix") {
