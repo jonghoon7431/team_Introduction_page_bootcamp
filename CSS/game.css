@@ -1,3 +1,8 @@
+@charset "utf-8";
+@import url("https://fonts.googleapis.com/css2?family=Jersey+10&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +12,10 @@
 }
 
 body {
-  background-color: rgb(27, 49, 7);
+  background-image: url(../img/배경.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .wrap-all {
@@ -19,8 +27,9 @@ body {
 
 .play-time {
   font-size: 3rem;
-  margin-top: 2rem;
-  color: var(--facebook);
+  font-weight: bold;
+  margin-top: 3rem;
+  color: red;
 }
 
 ul {
@@ -28,33 +37,47 @@ ul {
   list-style: none;
   border: 2px solid var(--facebook);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
 }
 
 li {
   width: 100px;
   height: 100px;
+  cursor: grab;
    
   color: blanchedalmond;
-  background: url(../img/hexagonimg.jpg)
+  background: url(../img/hexagon.jpg)
 }
 
 .start-button {
-  background: var(--facebook);
-  color: antiquewhite;
-  border: none;
-  padding: 1rem 2rem;
-  margin-top: 1rem;
+  padding: 0 30px;
+  margin-top: 3rem;
+
+
+  font-family: "Jersey 10", sans-serif;
+  font-size: 50px;
+  font-weight: normal;
+
+  text-align: center;
+  color: white;
+  text-decoration: none;
+
   cursor: pointer;
+  border-radius: 20px;
+  background-color: #6e9785;
 
 }
 
 .game-text {
   position: absolute;
   font-size: 45px;
-  color: blue;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  background: none;
+  border: none;
+  color: rgb(255, 234, 0);
+  text-shadow: 2px 3px rgba(12, 12, 12, 0.5);
   display: none ;
+  cursor: pointer;
 }
 
 .list0 {
@@ -73,66 +96,31 @@ li {
 }
 
 .list3 {
-  background-position-x: -300px;
-  background-position-y: 0px;
+  background-position-x: 0px;
+  background-position-y: -100px;
 }
 
 .list4 {
-  background-position-x: 0px;
+  background-position-x: -100px;
   background-position-y: -100px;
 }
 
 .list5 {
-  background-position-x: -100px;
+  background-position-x: -200px;
   background-position-y: -100px;
 }
 
 .list6 {
-  background-position-x: -200px;
-  background-position-y: -100px;
+  background-position-x: 0px;
+  background-position-y: -200px;
 }
 
 .list7 {
-  background-position-x: -300px;
-  background-position-y: -100px;
+  background-position-x: -100px;
+  background-position-y: -200px;
 }
 
 .list8 {
-  background-position-x: 0px;
-  background-position-y: -200px;
-}
-
-.list9 {
-  background-position-x: -100px;
-  background-position-y: -200px;
-}
-
-.list10 {
   background-position-x: -200px;
   background-position-y: -200px;
-}
-
-.list11 {
-  background-position-x: -300px;
-  background-position-y: -200px;
-}
-
-.list12 {
-  background-position-x: 0px;
-  background-position-y: -300px;
-}
-
-.list13 {
-  background-position-x: -100px;
-  background-position-y: -300px;
-}
-
-.list14 {
-  background-position-x: -200px;
-  background-position-y: -300px;
-}
-
-.list15 {
-  background-position-x: -300px;
-  background-position-y: -300px;
 }

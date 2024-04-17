@@ -23,8 +23,7 @@ body {
   color: white;
   -webkit-text-stroke: 3px black;
   text-align: center;
-  
-  font-size: 50px;
+  font-size: 40px;
 }
 
 summary::-webkit-details-marker {
@@ -34,12 +33,12 @@ summary::-webkit-details-marker {
 summary {
   margin: 50px;
   display: block;
-  font-size: 50px;
+  font-size: 40px;
   cursor: pointer;
 }
 
 p {
-  font-size: 40px;
+  font-size: 35x;
 }
 
 .question {
