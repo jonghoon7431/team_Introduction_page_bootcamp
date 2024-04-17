@@ -113,7 +113,6 @@ function fixReply(target) {
 
     fixTextarea.style.display = "block";
     textsReply.style.display = "none";
-    fixTextarea.value = textsReply.textContent;
 
     target.style.display = "none"; // "수정" 버튼 감추기
     target.nextSibling.nextSibling.style.display = "block"; // "수정 완료" 버튼 보이기
