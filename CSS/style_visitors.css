@@ -187,6 +187,16 @@ body {
 .texts .texts_inf span {
     margin: 0 3px;
 }
+.texts .texts_inf .fix_done {
+    display: none;
+    margin: 0 2px;
+    color: #b1b1b1;
+    transition: color 0.2s;
+}
+.texts .texts_inf .fix_done:hover {
+    transition: color 0.2s;
+    color: #fff;
+}
 .texts .texts_inf .fix {
     margin: 0 2px;
     color: #b1b1b1;
