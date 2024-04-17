@@ -43,8 +43,6 @@ let writeTextarea = document.querySelector('.write .reply_textarea');
 let writeBtn = document.querySelector('.write button');
 let replySectionList = document.querySelector('.reply_section ul');
 
-let replyCount = 0;
-
 function replyDate() {
     let today = new Date();
     let year = today.getFullYear();
@@ -80,10 +78,30 @@ function reply(textThing) {
     `;
 
     return html;
-}
+};
+
+function unframedReply(textThing) {
+    let {dateString, timeString} = replyDate();
+
+    let html = `
+    <div class="texts">
+        <p class="texts_reply">${textThing}</p>
+        <textarea class="reply_textarea">${textThing}</textarea>
+        <p class="texts_inf">
+            <span>${dateString}</span>
+            <span>${timeString}</span>
+            <button class="fix">수정</button>
+            <button class="complete">수정 완료</button>
+            <button class="delete">삭제</button>
+        </p>
+    </div>
+    `;
+
+    return html;
+};
+// 수정 완료용 형식
 
 writeBtn.addEventListener('click', () => {
-    replyCount++;
     if (writeTextarea.value === '') {
         alert('내용을 입력해주세요.')
         writeTextarea.focus();
@@ -95,11 +113,6 @@ writeBtn.addEventListener('click', () => {
     writeTextarea.value = '';
 })
 // 클릭하면 input.value의 내용이 댓글란에 등록된다. 이후 input.value를 비운다. 공백인 경우 alert창이 뜬 후 input에 focus가 생긴다
-
-// let fixBtn = document.querySelector(".fix");
-// let completeBtn = document.querySelector(".complete");
-// let deleteBtn = document.querySelector(".delete");
-
 
 function deleteReply(target) {
     const removeTarget = target.closest("li");
@@ -113,7 +126,6 @@ function fixReply(target) {
 
     fixTextarea.style.display = "block";
     textsReply.style.display = "none";
-    fixTextarea.value = textsReply.textContent;
 
     target.style.display = "none"; // "수정" 버튼 감추기
     target.nextSibling.nextSibling.style.display = "block"; // "수정 완료" 버튼 보이기
@@ -124,7 +136,7 @@ function completeReply(target) {
     const textsDiv = textsLi.querySelector(".texts");
     const fixTextarea = textsDiv.querySelector(".reply_textarea");
 
-    let newHtml = reply(fixTextarea.value);
+    let newHtml = unframedReply(fixTextarea.value);
     textsLi.innerHTML = newHtml;
 
     target.style.display = "none"; // "수정 완료" 버튼 감추기
