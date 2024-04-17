@@ -206,6 +206,13 @@ body {
     transition: color 0.2s;
     color: #fff;
 }
+.texts .texts_inf .complete {
+    margin: 0 2px;
+    color: #b1b1b1;
+    transition: color 0.2s;
+
+    display: none;
+}
 .texts .texts_inf .delete {
     margin: 0 2px;
     color: #d44848;
