@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>조원-한효림</title>
+    <link rel="icon" href="../img/favicon-32x32.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./graph.css" />
+  </head>
+  <body>
+
+    <div class="full-container">
+      <div class="back-button">
+        <!-- 밑 a 태그에 팀원 소개 페이지 연결 -->
+        <a href="./member6.html">
+          <button><i class="fa-solid fa-arrow-left btn"></i>뒤로 가기</button>
+        </a>
+      </div>
+
+      <div class="container">
+        <div class="info-container">
+          <div class="name-container">
+            <h1>한효림</h1>
+            <p>팀원/육각형조</p>
+          </div>
+
+          <div class="detail-container">
+            <div class="detail">
+              <p class="category">요리</p>
+              <p>
+                 <!-- low, high, optimum : 낮은 값, 높은 값, 중간 값 그래프마다 자유롭게 정할 수 있음
+                ** 낮은 값은 low 값 이하여야 하고 low 값과 같은 값을 주면 안 됨) -->
+                <meter
+                  class="meter-size"
+                  min="0"
+                  max="100"
+                  low="40"
+                  high="90"
+                  optimum="60"
+                  value="30"
+                ></meter>
+              </p>
+              <p class="mouse-over">💭</p>
+              <p class="result">먹는 것만 좋아해요</p>
+            </div>
+
+            <div class="detail">
+              <p class="category">독서</p>
+              <p>
+                <meter
+                  class="meter-size"
+                  min="0"
+                  max="100"
+                  low="30"
+                  high="90"
+                  optimum="60"
+                  value="50"
+                ></meter>
+              </p>
+              <p class="mouse-over">💭</p>
+              <p class="result">책 사는 걸 더 좋아하는 것 같은 느낌?...</p>
+            </div>
+
+            <div class="detail">
+              <p class="category">음악 듣기</p>
+              <p>
+                <meter
+                  class="meter-size"
+                  min="0"
+                  max="100"
+                  low="30"
+                  high="90"
+                  optimum="60"
+                  value="70"
+                ></meter>
+              </p>
+              <p class="mouse-over">💭</p>
+              <p class="result">유튜브 프리미엄으로 노래만 들어요</p>
+            </div>
+
+            <div class="detail">
+              <p class="category">쇼핑</p>
+              <p>
+                <meter
+                  class="meter-size"
+                  min="0"
+                  max="100"
+                  low="30"
+                  high="90"
+                  optimum="60"
+                  value="50"
+                ></meter>
+              </p>
+              <p class="mouse-over">💭</p>
+              <p class="result">아이 쇼핑 많이해요</p>
+            </div>
+
+            <div class="detail">
+              <p class="category">체력</p>
+              <p>
+                <meter
+                  class="meter-size"
+                  min="0"
+                  max="100"
+                  low="30"
+                  high="90"
+                  optimum="60"
+                  value="10"
+                ></meter>
+              </p>
+              <p class="mouse-over">💭</p>
+              <p class="result">숨쉬기 운동 최고의 운동</p>
+            </div>
+
+            <!-- <div class="detail-2">
+              <p class="category">💭</p>
+              <p>
+              설명
+              </p>
+            </div>
+
+
+            <div class="detail-2">
+              <p class="category">💭</p>
+              <p>
+              설명
+              </p>
+            </div> -->
+          </div>
+        </div>
+
+        <div class="img-container">
+          <img src="./1.png" alt="프로필 사진" />
+        </div>
+      </div>
+
+      <div class="button-container">
+        <div class="button">
+          <button><a href="./index.html">시작화면</a></button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
