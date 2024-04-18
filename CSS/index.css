@@ -14,13 +14,14 @@ body {
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-size: cover;
+  font-family: Arial, sans-serif;
 }
 
 
 #main {
   height: 300px;
   margin-top: 200px;
-  padding: 50px;
+  padding: 0px;
 
   font-family: "Jua", sans-serif;
   font-weight: 400;
@@ -36,7 +37,7 @@ body {
   overflow: hidden;
 }
 
-button {
+.start > button{
   display: block;
   width: 500px;
   height: 130px;
@@ -65,6 +66,29 @@ button:link {
 
 button:hover {
   color: yellow;
+  transition: background-color 0.2s;
+  background-color: #165839;
+}
+
+
+#box {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: right;
+}
+
+#playPause {
+  padding: 15px 25px;
+  margin: 20px 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50%;
+  background-color: #6e9785;
+  color: #fff;
+  font-size: 40px;
+}
+
+#playPause:hover {
   transition: background-color 0.2s;
   background-color: #165839;
 }
