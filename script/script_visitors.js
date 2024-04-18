@@ -1,11 +1,24 @@
-// Firebase SDK 라이브러리 임포트
-// import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-// import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-// import {
-//   collection,
-//   addDoc,
-// } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-// import { getDocs } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+// Firebase SDK 라이브러리 가져오기
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { collection, addDoc, doc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { getDocs, getDoc, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCGH5YJpI2S40qnfLJY5yH3t--tWfPdi_g",
+    authDomain: "team-introduce-page.firebaseapp.com",
+    projectId: "team-introduce-page",
+    storageBucket: "team-introduce-page.appspot.com",
+    messagingSenderId: "812103371942",
+    appId: "1:812103371942:web:710f79957dc159d322f867"
+};
+
+// Firebase 인스턴스 초기화
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+
+
 
 /* <조원의 이름에 따라 '/' 이후에 오는 이름이 바뀌는 기능> */
 let urlParams = new URLSearchParams(window.location.search); // URL에서 물음표(?) 이후에 오는 부분 가져오기
@@ -34,7 +47,8 @@ switch(referrer) {
 }
 
 let btn = document.getElementById("btn");
-btn.textContent = "조원 선택 / " + username;
+btn.textContent = " 조원 선택 / " + username;
+
 
 /* <댓글을 다는 기능> */
 let writeTextarea = document.querySelector('.write .reply_textarea');
@@ -56,63 +70,73 @@ function replyDate() {
     return {dateString, timeString};
 }
 
-function reply(textThing) {
-    let {dateString, timeString} = replyDate();
-    let html = `
-    <li>
-        <div class="texts">
-            <p class="texts_reply">${textThing}</p>
-            <textarea class="reply_textarea">${textThing}</textarea>
-            <p class="texts_inf">
-                <span>${dateString}</span>
-                <span>${timeString}</span>
-                <button class="fix">수정</button>
-                <button class="complete">수정 완료</button>
-                <button class="delete">삭제</button>
-            </p>
-        </div>
-    </li>
-    `;
-    return html;
-};
+writeBtn.addEventListener('click', async function() {
+    if (writeTextarea.value === '') {
+        alert('내용을 입력해주세요.')
+        writeTextarea.focus();
+        return
+    }
 
-function unframedReply(textThing) {
-    let {dateString, timeString} = replyDate();
+    let dTStrings = replyDate();
+    let text = writeTextarea.value;
+    let date = dTStrings.dateString;
+    let time = dTStrings.timeString;
+    
+    await addDoc(collection(db, "comment"), {
+        text: text,
+        date: date,
+        time: time,
+    });
 
-    let html = `
+    alert('등록되었습니다.')
+    window.location.reload();
+    writeTextarea.value = '';
+});
+// 클릭하면 input.value의 내용이 댓글란에 등록된다. 이후 input.value를 비운다. 공백인 경우 alert창이 뜬 후 input에 focus가 생긴다
+
+let docs = await getDocs(collection(db, "comment"));
+docs.forEach((doc) => {
+    let row = doc.data();
+    let replyId = doc.id;
+    let text = row['text']
+    let date = row['date']
+    let time = row['time']
+
+    let unframedHtml = `
     <div class="texts">
-        <p class="texts_reply">${textThing}</p>
-        <textarea class="reply_textarea">${textThing}</textarea>
+        <p class="texts_reply">${text}</p>
+        <textarea class="reply_textarea">${text}</textarea>
         <p class="texts_inf">
-            <span>${dateString}</span>
-            <span>${timeString}</span>
+            <span>${date}</span>
+            <span>${time}</span>
+            <span class="reply_id">작성자 : ${replyId}</span>
             <button class="fix">수정</button>
             <button class="complete">수정 완료</button>
             <button class="delete">삭제</button>
         </p>
     </div>
     `;
+    let html = `<li>${unframedHtml}</li>`
 
-    return html;
-};
-// 수정 완료용 형식
-
-writeBtn.addEventListener('click', () => {
-    if (writeTextarea.value === '') {
-        alert('내용을 입력해주세요.')
-        writeTextarea.focus();
-        return
-    }
-    let html = reply(writeTextarea.value);
-    console.log(html);
-    replySectionList.innerHTML += html;
-    writeTextarea.value = '';
+    replySectionList.innerHTML += html
 });
-// 클릭하면 input.value의 내용이 댓글란에 등록된다. 이후 input.value를 비운다. 공백인 경우 alert창이 뜬 후 input에 focus가 생긴다
+// 입력된 텍스트를 댓글란에 표시 
 
-function deleteReply(target) {
+
+async function deleteReply(target) {
     const removeTarget = target.closest("li");
-    removeTarget.remove();
+    const targetIdPosition = removeTarget.querySelector(".reply_id").innerText;
+    const targetId = targetIdPosition.replace(/작성자\s+:\s/, '');
+    
+    const userDoc = doc(db, 'comment', targetId);
+    await deleteDoc(userDoc);
+    alert('코멘트를 삭제합니다.')
+    window.location.reload();
+    
+    /*
+    <db 연결 전 코드>
+    const removeTarget = target.closest("li");
+    removeTarget.remove(); */
 };
 
 function fixReply(target) {
@@ -125,17 +149,47 @@ function fixReply(target) {
 
     target.style.display = "none"; // "수정" 버튼 감추기
     target.nextSibling.nextSibling.style.display = "block"; // "수정 완료" 버튼 보이기
-}
-;
-function completeReply(target) {
+};
+
+async function completeReply(target) {
     const textsLi = target.closest("li");
     const fixTextarea = textsLi.querySelector(".reply_textarea");
+    
+    const targetIdPosition = textsLi.querySelector(".reply_id").innerText;
+    const targetId = targetIdPosition.replace(/작성자\s+:\s/, '');
 
+    let dTStrings = replyDate();
+    let text = fixTextarea.value;
+    let date = dTStrings.dateString;
+    let time = dTStrings.timeString;
+
+    let newReply = {
+        text: text,
+        date: date,
+        time: time,
+    };
+
+    let docRef = doc(db, "comment", targetId);
+    const docSnapshot = await getDoc(docRef);
+
+    if (docSnapshot.exists()) {
+        await updateDoc(docRef, newReply)
+        alert('코멘트가 수정되었습니다.')
+        window.location.reload();
+    } else {
+        alert('해당 코멘트를 찾을 수 없습니다.')
+        window.location.reload();
+        return
+    };
+
+    /*
+    <db 연결 전 코드> 
     let newHtml = unframedReply(fixTextarea.value);
     textsLi.innerHTML = newHtml;
 
     target.style.display = "none"; // "수정 완료" 버튼 감추기
-    target.previousSibling.previousSibling.style.display = "block"; // "수정" 버튼 보이기
+    target.previousSibling.previousSibling.style.display = "block"; // "수정" 버튼 보이기 
+    */
 };
 
 replySectionList.addEventListener('click', (event) => {

@@ -15,6 +15,7 @@ button {
     border: none;
     background: none;
     border-radius: 0;
+    cursor: pointer;
 }
 input {
     border: none;
@@ -65,7 +66,6 @@ body {
 }
 .page_name a .button_name {
     margin-left: 15px;
-    cursor: pointer;
 }
 .page_name a .button_name:hover {
     transform: scale(1.1);
@@ -147,6 +147,9 @@ body {
     height: 600px;
     overflow-y: auto;
 }
+.reply_section ul .reply_id {
+    display: none;
+}
 .reply_section ul::-webkit-scrollbar {
     width: 5px;
 }
@@ -195,13 +198,13 @@ body {
 .texts .texts_inf span {
     margin: 0 3px;
 }
-.texts .texts_inf .fix_done {
+.texts .texts_inf .complete {
     display: none;
     margin: 0 2px;
     color: #b1b1b1;
     transition: color 0.2s;
 }
-.texts .texts_inf .fix_done:hover {
+.texts .texts_inf .complete:hover {
     transition: color 0.2s;
     color: white;
 }
