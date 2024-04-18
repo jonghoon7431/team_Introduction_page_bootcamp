@@ -25,7 +25,7 @@ jobs:
       run: npm run build
       
     - name: Deploy to GitHub Pages
-      uses: LEE-NS/WEEK1_team_introduce_page@v3
+      uses: LEE-NS/WEEK1_team_introduce_page@v2
       with:
         branch: gh-pages
         folder: build
