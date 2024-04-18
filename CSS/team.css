@@ -50,7 +50,10 @@ a {
 
 p {
   font-size: 35x;
-  /* display: block; */
+}
+
+.hidden {
+  display: none;
 }
 
 .question {
