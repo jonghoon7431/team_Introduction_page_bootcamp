@@ -4,8 +4,10 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase
 import { collection, addDoc, doc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 import { getDocs, getDoc, deleteDoc, updateDoc, orderBy, query } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
+const API_KEY = config.apiKey;
+
 const firebaseConfig = {
-    apiKey: "AIzaSyCGH5YJpI2S40qnfLJY5yH3t--tWfPdi_g",
+    apiKey: `${API_KEY}`,
     authDomain: "team-introduce-page.firebaseapp.com",
     projectId: "team-introduce-page",
     storageBucket: "team-introduce-page.appspot.com",
