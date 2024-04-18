@@ -2,7 +2,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 import { collection, addDoc, doc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-import { getDocs, getDoc, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
+import { getDocs, getDoc, deleteDoc, updateDoc, orderBy, query } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyCGH5YJpI2S40qnfLJY5yH3t--tWfPdi_g",
@@ -86,6 +86,7 @@ writeBtn.addEventListener('click', async function() {
         text: text,
         date: date,
         time: time,
+        timestamp: new Date(),
     });
 
     alert('등록되었습니다.')
@@ -94,7 +95,7 @@ writeBtn.addEventListener('click', async function() {
 });
 // 클릭하면 input.value의 내용이 댓글란에 등록된다. 이후 input.value를 비운다. 공백인 경우 alert창이 뜬 후 input에 focus가 생긴다
 
-let docs = await getDocs(collection(db, "comment"));
+let docs = await getDocs(query(collection(db, "comment"), orderBy("timestamp", "desc")));
 docs.forEach((doc) => {
     let row = doc.data();
     let replyId = doc.id;
