@@ -56,29 +56,9 @@ function replyDate() {
     return {dateString, timeString};
 }
 
+
 function reply(textThing) {
     let {dateString, timeString} = replyDate();
-    let html = `
-    <li>
-        <div class="texts">
-            <p class="texts_reply">${textThing}</p>
-            <textarea class="reply_textarea">${textThing}</textarea>
-            <p class="texts_inf">
-                <span>${dateString}</span>
-                <span>${timeString}</span>
-                <button class="fix">수정</button>
-                <button class="complete">수정 완료</button>
-                <button class="delete">삭제</button>
-            </p>
-        </div>
-    </li>
-    `;
-    return html;
-};
-
-function unframedReply(textThing) {
-    let {dateString, timeString} = replyDate();
-
     let html = `
     <div class="texts">
         <p class="texts_reply">${textThing}</p>
@@ -92,7 +72,6 @@ function unframedReply(textThing) {
         </p>
     </div>
     `;
-
     return html;
 };
 // 수정 완료용 형식
@@ -104,8 +83,10 @@ writeBtn.addEventListener('click', () => {
         return
     }
     let html = reply(writeTextarea.value);
-    console.log(html);
-    replySectionList.innerHTML += html;
+    let newLi = document.createElement("li"); // 새로운 <li> 요소 생성
+    newLi.innerHTML = html;
+    // console.log(newLi);
+    replySectionList.appendChild(newLi);
     writeTextarea.value = '';
 });
 // 클릭하면 input.value의 내용이 댓글란에 등록된다. 이후 input.value를 비운다. 공백인 경우 alert창이 뜬 후 input에 focus가 생긴다
@@ -116,9 +97,9 @@ function deleteReply(target) {
 };
 
 function fixReply(target) {
-    const textsDiv = target.closest(".texts");
-    const fixTextarea = textsDiv.querySelector(".reply_textarea");
-    const textsReply = textsDiv.querySelector(".texts_reply");
+    let li = target.closest("li");
+    const fixTextarea = li.querySelector(".reply_textarea");
+    const textsReply = li.querySelector(".texts_reply");
 
     fixTextarea.style.display = "block";
     textsReply.style.display = "none";
@@ -128,11 +109,12 @@ function fixReply(target) {
 }
 ;
 function completeReply(target) {
-    const textsLi = target.closest("li");
-    const fixTextarea = textsLi.querySelector(".reply_textarea");
-
-    let newHtml = unframedReply(fixTextarea.value);
-    textsLi.innerHTML = newHtml;
+    let li = target.closest("li");
+    const fixTextarea = li.querySelector(".reply_textarea");
+    
+    let newHtml = reply(fixTextarea.value);
+    li.innerHTML = newHtml;
+    // console.log(li);
 
     target.style.display = "none"; // "수정 완료" 버튼 감추기
     target.previousSibling.previousSibling.style.display = "block"; // "수정" 버튼 보이기

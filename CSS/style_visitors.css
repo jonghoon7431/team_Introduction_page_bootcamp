@@ -39,33 +39,39 @@ body {
     background-size: cover;
 }
 #wrap {
-    width: 85%;
+    width: 85vw;
     height: 100%;
     margin: 30px auto;
     background-color: #000000CF;
 }
 .page_name {
+    /* border: 5px solid red; */
     height: 70px;
     padding: 15px 0;
 }
 .page_name a {
-    height: 100%;
-    margin-left: 20px;
-    display: flex;
+    /* height: 100%; */
+    /* margin-left: 20px; */
+    /* display: flex;
     font-size: 30px;
     font-weight: 900;
-    color: white;
+    color: white; */
 }
-.page_name a #btn {
+.page_name a #icon {
     /* margin-top: 2px; */
     margin-left: 10px;
-    margin-right: 10px;
+    /* margin-right: 10px; */
     font-size: 30px;
     color: white;
 }
 .page_name a .button_name {
-    margin-left: 15px;
+    color: white;
+    font-size: 30px;
+    /* margin-left: 15px; */
+    background: none;
+    border: 0;
     cursor: pointer;
+    /* margin-top: 10px; */
 }
 .page_name a .button_name:hover {
     transform: scale(1.1);
