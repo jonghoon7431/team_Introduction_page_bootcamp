@@ -40,10 +40,6 @@ body {
   transition-duration: 1s;
 }
 
-.back-button span {
-  font-size: 25px;
-}
-
 .container {
   /* border: 3px solid red; */
   padding: 10px;

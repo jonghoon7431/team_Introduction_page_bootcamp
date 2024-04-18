@@ -6,12 +6,24 @@
   <title>육각형</title>
   <link rel="icon" href="../img/favicon-32x32.png">
   <link rel="stylesheet" href="../CSS/index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 
 <body>
+  <div id="box">
+    <audio id="audio" onloadstart="this.volume=0.1" src="../audio/1.mp3" loop> </audio>
+    <button id="playPause"><i class="fa fa-play"></i></button>
+  </div>
+
   <div id="main">
     "6각형 조"의 팀 소개 페이지 </div>
-      <button type="button" onclick = "location.href = 'game.html'">start</button>
+  <div class="start">
+    <button type="button" onclick="location.href = 'game.html'">start</button>
+  </div>
+
+
+
+  <script src="../script/audio.js"></script>
 </body>
 
 </html>

@@ -21,7 +21,7 @@ const db = getFirestore(app);
 
 
 /* <조원의 이름에 따라 '/' 이후에 오는 이름이 바뀌는 기능> */
-let urlParams = new URLSearchParams(window.location.search); // URL에서 물음표(?) 이후에 오는 부분 가져오기
+/* let urlParams = new URLSearchParams(window.location.search); // URL에서 물음표(?) 이후에 오는 부분 가져오기
 let referrer = urlParams.get('referrer'); // referrer 속성의 값 가져오기
 let username = null; // 페이지에 따라 바뀔 이름
 
@@ -47,7 +47,7 @@ switch(referrer) {
 }
 
 let btn = document.getElementById("btn");
-btn.textContent = " 조원 선택 / " + username;
+btn.textContent = " 조원 선택 / " + username; */
 
 
 /* <댓글을 다는 기능> */
@@ -140,9 +140,9 @@ async function deleteReply(target) {
 };
 
 function fixReply(target) {
-    const textsDiv = target.closest(".texts");
-    const fixTextarea = textsDiv.querySelector(".reply_textarea");
-    const textsReply = textsDiv.querySelector(".texts_reply");
+    let li = target.closest("li");
+    const fixTextarea = li.querySelector(".reply_textarea");
+    const textsReply = li.querySelector(".texts_reply");
 
     fixTextarea.style.display = "block";
     textsReply.style.display = "none";

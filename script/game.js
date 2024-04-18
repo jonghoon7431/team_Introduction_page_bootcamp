@@ -15,8 +15,7 @@ let isPlaying = false;
 let timeInterval = null; 
 let time = 0;
 
-//fuctions
-
+//퍼즐이 다 맞춰지면 게임 종료
 function checkStatus(){
   const currentList = [...container.children];
   const unMatchedList = currentList.filter((child, index) => Number(child.getAttribute("data-index")) !== index)
@@ -27,6 +26,7 @@ function checkStatus(){
   }
 }
 
+//게임 시작 구현
 function setGame() {
   isPlaying = true;
   time = 0;
@@ -47,7 +47,6 @@ function setGame() {
 }
 
 
-
   function createImageTiles(){
     const tempArray = [];
       Array(tileCount).fill().forEach((_, i) => {
@@ -60,7 +59,7 @@ function setGame() {
       return tempArray; 
     }
 
-
+//퍼즐이 맞춰질 때마다 index 숫자를 줄여서 이후 완성여부를 구현함
 function shuffle(array){
   let index = array.length - 1;
   while(index > 0){

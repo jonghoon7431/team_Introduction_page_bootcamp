@@ -42,8 +42,18 @@ summary {
   cursor: pointer;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+  -webkit-text-stroke: inherit;
+}
+
 p {
   font-size: 35x;
+}
+
+.hidden {
+  display: none;
 }
 
 .question {
