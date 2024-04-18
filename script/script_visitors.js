@@ -5,12 +5,12 @@ import { collection, addDoc, doc } from "https://www.gstatic.com/firebasejs/9.22
 import { getDocs, getDoc, deleteDoc, updateDoc, orderBy, query } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
 const firebaseConfig = {
-    apiKey: process.env.API_KEY ,
-    authDomain: process.env.AUTH_DOMAIN,
-    projectId: process.env.PROJECT_ID,
-    storageBucket: process.env.STORAGE_BUCKET,
-    messagingSenderId: process.env.messagingSenderId,
-    appId: process.env.APP_ID,
+    apiKey: config.API_KEY ,
+    authDomain: config.AUTH_DOMAIN,
+    projectId: config.PROJECT_ID,
+    storageBucket: config.STORAGE_BUCKET,
+    messagingSenderId: config.messagingSenderId,
+    appId: config.APP_ID,
 };
 
 // Firebase 인스턴스 초기화
