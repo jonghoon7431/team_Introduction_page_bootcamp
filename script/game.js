@@ -15,6 +15,17 @@ let isPlaying = false;
 let timeInterval = null; 
 let time = 0;
 
+function play() {
+  var audio = document.getElementById('audio_play');
+  if (audio.paused) {
+    audio.play();
+  } else {
+    audio.pause();
+    audio.currentTime = 0
+  }
+} 
+
+
 //퍼즐이 다 맞춰지면 게임 종료
 function checkStatus(){
   const currentList = [...container.children];
@@ -28,6 +39,7 @@ function checkStatus(){
 
 //게임 시작 구현
 function setGame() {
+  play();
   isPlaying = true;
   time = 0;
   container.innerHTML = "";
@@ -56,7 +68,7 @@ function setGame() {
         li.classList.add(`list${i}`);
         tempArray.push(li)
       })
-      return tempArray; 
+      return tempArray;
     }
 
 //퍼즐이 맞춰질 때마다 index 숫자를 줄여서 이후 완성여부를 구현함
@@ -74,6 +86,8 @@ function shuffle(array){
 // events
 
 container.addEventListener('dragstart', e => {
+  play();
+
   if(!isPlaying) return;
   const obj = e.target;
   dragged.el = obj;
