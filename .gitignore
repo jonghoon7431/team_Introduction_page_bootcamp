@@ -6,4 +6,4 @@ graph1 copy.html
 graph copy.css
 team copy.html
 team copy.css
-script/apiKey.js
+.env

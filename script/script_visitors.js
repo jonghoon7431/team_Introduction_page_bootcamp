@@ -4,20 +4,13 @@ import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase
 import { collection, addDoc, doc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 import { getDocs, getDoc, deleteDoc, updateDoc, orderBy, query } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 
-const API_KEY = config.apiKey;
-const AUTH_DOMAIN = config.authDomain;
-const PROJECT_ID = config.projectId;
-const STORAGE_BUCKET = config.storageBucket;
-const MESSAGING_SENDER_ID = config.messagingSenderId;
-const APP_ID = config.appId;
-
 const firebaseConfig = {
-    apiKey: `${API_KEY}`,
-    authDomain: `${AUTH_DOMAIN}`,
-    projectId: `${PROJECT_ID}`,
-    storageBucket: `${STORAGE_BUCKET}`,
-    messagingSenderId: `${MESSAGING_SENDER_ID}`,
-    appId: `${APP_ID}`,
+    apiKey: process.env.API_KEY ,
+    authDomain: process.env.AUTH_DOMAIN,
+    projectId: process.env.PROJECT_ID,
+    storageBucket: process.env.STORAGE_BUCKET,
+    messagingSenderId: process.env.messagingSenderId,
+    appId: process.env.APP_ID,
 };
 
 // Firebase 인스턴스 초기화
