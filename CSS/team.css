@@ -8,8 +8,8 @@
 }
 
 .btn {
-  position: absolute;
-  top: 0;
+  position: sticky;
+  top: 40px;
   font-size: 80px;
   margin: 40px 30px;
   color: aliceblue;

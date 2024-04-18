@@ -14,7 +14,7 @@ body {
 }
 
 .btn {
-  position: absolute;
+  position: fixed;
   font-size: 80px;
   color: aliceblue;
   margin: 40px 30px;
