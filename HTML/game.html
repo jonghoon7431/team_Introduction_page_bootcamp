@@ -1,24 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>퍼즐게임</title>
-  <link rel="icon" href="../img/favicon-32x32.png">
-  <link rel="stylesheet" href="../CSS/game.css">
-
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>퍼즐게임</title>
+    <link rel="icon" href="../img/favicon-32x32.png" />
+    <link rel="stylesheet" href="../CSS/game.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+  </head>
+  <body>
     <div class="wrap-all">
+      <div class="title">
+        <i class="fa-solid fa-check check_icon"></i>
+        <p>클리어 보상 : 팀 페이지 접속 권한</p>
+      </div>
       <p class="play-time">0</p>
-      <ul class="image-container">
-
-      </ul>
+      <ul class="image-container"></ul>
       <button class="start-button">Start</button>
-      <button class="game-text" onclick = "location.href = 'button.html'">Completed!</button>
-    
-    <script src="../script/game.js"> </script>
+      <button class="game-text" onclick="location.href = 'button.html'">
+        Completed!
+      </button>
 
+      <script src="../script/game.js"></script>
     </div>
-</body>
+  </body>
 </html>
