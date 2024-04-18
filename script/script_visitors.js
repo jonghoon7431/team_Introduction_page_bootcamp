@@ -3,17 +3,21 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebas
 import { getFirestore } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 import { collection, addDoc, doc } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
 import { getDocs, getDoc, deleteDoc, updateDoc, orderBy, query } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore.js";
-import { config } from "./apiKey";
 
 const API_KEY = config.apiKey;
+const AUTH_DOMAIN = config.authDomain;
+const PROJECT_ID = config.projectId;
+const STORAGE_BUCKET = config.storageBucket;
+const MESSAGING_SENDER_ID = config.messagingSenderId;
+const APP_ID = config.appId;
 
 const firebaseConfig = {
     apiKey: `${API_KEY}`,
-    authDomain: "team-introduce-page.firebaseapp.com",
-    projectId: "team-introduce-page",
-    storageBucket: "team-introduce-page.appspot.com",
-    messagingSenderId: "812103371942",
-    appId: "1:812103371942:web:710f79957dc159d322f867"
+    authDomain: `${AUTH_DOMAIN}`,
+    projectId: `${PROJECT_ID}`,
+    storageBucket: `${STORAGE_BUCKET}`,
+    messagingSenderId: `${MESSAGING_SENDER_ID}`,
+    appId: `${APP_ID}`,
 };
 
 // Firebase 인스턴스 초기화
