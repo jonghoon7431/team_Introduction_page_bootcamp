@@ -1,0 +1,67 @@
+name: API_KEY
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  update-readme-with-appinfo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: setup node
+        uses: actions/setup-node@v1
+      - name: Install dependencies
+        run: npm install
+      - name: Generate README file
+        run: node script_visitors.js
+        env:
+          MY_API_KEY: ${{secrets.MY_API_KEY}}
+
+---
+name: APP_ID
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  update-readme-with-appinfo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: setup node
+        uses: actions/setup-node@v1
+      - name: Install dependencies
+        run: npm install
+      - name: Generate README file
+        run: node script_visitors.js
+        env:
+          MY_API_KEY: ${{secrets.MY_API_KEY}}
+
+---
+name: MESSAGING_SENDER_ID
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  update-readme-with-appinfo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v1
+      - name: setup node
+        uses: actions/setup-node@v1
+      - name: Install dependencies
+        run: npm install
+      - name: Generate README file
+        run: node script_visitors.js
+        env:
+          MY_API_KEY: ${{secrets.MY_API_KEY}}
